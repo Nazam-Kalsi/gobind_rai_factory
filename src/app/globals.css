@@ -137,3 +137,27 @@
     color: black;
     text-shadow: none;
 }
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+   50% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  70% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.fade-in-out {
+  animation: fadeInOut 3s forwards;
+}

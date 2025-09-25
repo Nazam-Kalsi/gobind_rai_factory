@@ -4,7 +4,6 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import Image from 'next/image';
 import { HyperText } from '@/components/ui//hyper-text';
-import { Highlighter } from '@/components/ui/highlighter';
 
 function HeroSection() {
   const containerRef = useRef(null);
@@ -126,7 +125,7 @@ gsap.set(secondaryImage2, {
   return (
     <section
       ref={containerRef}
-      className="overflow-hidden relative h-screen flex items-center justify-center"
+      className="overflow-hidden relative h-[95vh] flex items-center justify-center"
       style={{
         contain: 'layout style paint',
         willChange: 'auto'
@@ -135,12 +134,20 @@ gsap.set(secondaryImage2, {
 
       <div
         ref={yellowDivRef}
-        className="absolute inset-0 bg-yellow-400 z-30 pointer-events-none"
+        className="flex items-center justify-center absolute inset-0 bg-yellow-400 z-30 pointer-events-none"
         style={{
           transform: 'skewY(12deg)',
           backfaceVisibility: 'hidden'
         }}
-      />
+      >
+      </div>
+        <Image
+        className="absolute top-1/2 left-1/2 z-[99] fade-in-out"
+          src="/tractor.gif"
+          width={80}
+          height={80}
+          alt="Wait"
+        />
 
       <section
         ref={mainDivRef}

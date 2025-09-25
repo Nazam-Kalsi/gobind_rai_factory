@@ -1,10 +1,11 @@
 "use client"
-import { Header, HeroSection } from "@/components";
+import { HeroSection,HorizontalScrollSection } from "@/components";
 
 export default function Home() {
   return (
     <main>
       <HeroSection/>
+      <HorizontalScrollSection/>
     </main>
   );
 }

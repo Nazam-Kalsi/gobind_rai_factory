@@ -5,7 +5,6 @@ import { cn } from '@/lib/utils';
 import { Dock, DockIcon } from '@/components/ui/dock';
 import { BadgeInfo, Contact2Icon, Facebook, Home, Instagram } from 'lucide-react';
 import Link from 'next/link';
-import { Separator } from '@radix-ui/react-separator';
 import { AnimatedThemeToggler } from '../ui/animated-theme-toggler';
 
 const DATA = {
@@ -53,7 +52,6 @@ function Header() {
                 </Tooltip>
               </DockIcon>
             ))}
-            {/* <Separator/> */}
             {Object.entries(DATA.contact.social).map(([name, social]) => (
               <DockIcon key={name}>
                 <Tooltip>
