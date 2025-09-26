@@ -1,73 +1,3 @@
-// "use client";
-
-// import React, { useRef } from "react";
-// import Image from "next/image";
-// import gsap from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import { useGSAP } from "@gsap/react";
-
-// gsap.registerPlugin(ScrollTrigger, useGSAP);
-
-// function HorizontalScrollSection() {
-//   const container = useRef<HTMLDivElement>(null);
-//   const imgRef = useRef<HTMLImageElement>(null);
-//   const logoRef = useRef<HTMLImageElement>(null);
-
-//   useGSAP(() => {
-//     // Tractor horizontal movement
-//     gsap.to(imgRef.current, {
-//       x: "2700", // Move across viewport width minus image width
-//       ease: "none",
-//       scrollTrigger: {
-//         trigger: container.current,
-//         start: "top bottom",
-//         end: "bottom top",
-//         scrub: 1, 
-//       },
-//     });
-
-//     gsap.to(logoRef.current, 
-//         {
-//       scale: 9,
-//       y:450,
-//       ease: "none",
-//       scrollTrigger: {
-//         trigger: container.current,
-//         start: "top bottom",
-//         end: "bottom center",
-//         scrub: 1,
-//       },
-//     });
-//   }, { scope: container });
-
-//   return (
-//     <section
-//       ref={container}
-//       className="relative flex items-start justify-center w-full h-[100vh] overflow-hidden"
-//     >
-//       <Image
-//         className="absolute left-0 top-0 z-10"
-//         ref={imgRef}
-//         src="/tractor.gif"
-//         width={150}
-//         height={150}
-//         alt="Tractor"
-//       />
-//       <Image
-//         ref={logoRef}
-//         className=""
-//         src="/logo.svg"
-//         width={150}
-//         height={150}
-//         alt="Logo"
-//         style={{ transformOrigin: "center center " }} // Ensure scaling from center
-//       />
-//     </section>
-//   );
-// }
-
-// export default HorizontalScrollSection;
-
 "use client";
 
 import React, { useRef } from "react";
@@ -80,14 +10,40 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 function HorizontalScrollSection() {
   const container = useRef<HTMLDivElement>(null);
-  const imgRef = useRef<HTMLImageElement>(null);
+  const tractorRef = useRef<HTMLImageElement>(null);
+  const logoContainer = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLImageElement>(null);
-  const textRef = useRef<HTMLDivElement>(null);
+  const textLinesRef = useRef<HTMLDivElement>(null);
+  const featureImage = useRef<HTMLImageElement>(null);
+  const newSection = useRef<HTMLDivElement>(null);
+  const horizontalContainer = useRef<HTMLDivElement>(null);
+  const horizontalContent = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    // Tractor horizontal movement (happens during initial scroll)
-    gsap.to(imgRef.current, {
-      x: "2700", // Move across viewport width minus image width
+    gsap.to(logoContainer.current, {
+      scrollTrigger: {
+        trigger: container.current,
+        pin: true,
+        pinSpacing:false
+        
+      },
+    });
+    // 1️⃣ Tractor moves horizontally    
+    gsap.to(tractorRef.current, {
+      x: "2700",
+      ease: "none",
+      scrollTrigger: {
+        trigger: container.current,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+      },
+    });
+
+    // 2️⃣ Logo scaling
+    gsap.to(logoRef.current, {
+      scale: 6,
+      y: 250,
       ease: "none",
       scrollTrigger: {
         trigger: container.current,
@@ -97,81 +53,166 @@ function HorizontalScrollSection() {
       },
     });
 
-    // Pin the section and animate logo scaling
-    const tl = gsap.timeline({
+
+    // 3️⃣ Text reveal line by line
+    const lines = textLinesRef.current?.querySelectorAll(".line");
+    if (lines) {
+      gsap.from(lines, {
+        opacity: 0,
+        y: 50,
+        stagger: 0.3,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: textLinesRef.current,
+          start: "top 70%", 
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
+    }
+
+    // 4️⃣ Feature image takeover (AFTER text reveal finishes)
+    gsap.fromTo(
+  featureImage.current,
+  { opacity: 0, scale: 0.1, zIndex: 50 },
+  {
+    opacity: 1,
+    scale: 0.4,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: container.current,
+      start: "middle top",
+      end: "bottom bottom",
+      scrub: 1,
+      immediateRender: false,
+    },
+  }
+);
+
+gsap.fromTo(featureImage.current, 
+  {
+    scale:0.4
+  },{
+  y: "100vh",
+  scale: 1.5,
+  x: 0,
+  left: "50%",
+  transform: "translateX(-50%)",
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: newSection.current,
+    start: "top 90%",
+    end: "middle top",
+    scrub: 1,
+  },
+});
+
+
+    // 6️⃣ Pin the new section for horizontal scroll
+    gsap.to(newSection.current, {
       scrollTrigger: {
-        trigger: container.current,
-        start: "top bottom",
-        end: "bottom bottom", // Pin for 100vh worth of scroll
+        trigger: newSection.current,
+        start: "top top",
+        end: "bottom top",
         pin: true,
-        scrub: 1,
+        pinSpacing: false
       },
     });
 
-    // Logo scaling animation during pin
-    tl.to(logoRef.current, {
-      scale: 9,
-      y: 450,
+    // 7️⃣ Horizontal scroll animation
+    const horizontalDistance = horizontalContent.current?.scrollWidth - window.innerWidth;
+    
+    gsap.to(horizontalContent.current, {
+      x: -horizontalDistance,
       ease: "none",
-      duration: 0.5, // First half of pinned scroll
-    })
-    // Text reveal animation during second half of pin
-    .fromTo(textRef.current, 
-      {
-        opacity: 0,
-        y: 100,
-        scale: 0.8,
+      scrollTrigger: {
+        trigger: newSection.current,
+        start: "top top",
+        end: "bottom top",
+        scrub: 1,
       },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        ease: "power2.out",
-        duration: 0.5, // Second half of pinned scroll
-      }
-    );
+    });
+   
   }, { scope: container });
 
   return (
-    <section
+<>
+     <section
       ref={container}
-      className="relative flex items-start justify-center w-full h-[100vh] overflow-hidden"
+      className="relative flex flex-col items-center h-[400vh] justify-start w-full overflow-hidden"
     >
+
+      {/* Tractor */}
       <Image
+        ref={tractorRef}
         className="absolute left-0 top-0 z-10"
-        ref={imgRef}
         src="/tractor.gif"
         width={150}
         height={150}
         alt="Tractor"
       />
-      <Image
-        ref={logoRef}
-        className=""
-        src="/logo.svg"
-        width={150}
-        height={150}
-        alt="Logo"
-        style={{ transformOrigin: "center center" }}
-      />
-      
-      {/* Large Text Reveal - appears over scaled logo */}
-      <div
-        ref={textRef}
-        className="absolute inset-0 flex items-center justify-center pointer-events-none z-30"
-        style={{ 
-          fontSize: '9rem',
-          fontWeight: 'bold',
-          textAlign: 'center',
-          lineHeight: '0.9'
-        }}
-      >
-        <span className="text-white drop-shadow-2xl">
-          REVEALED<br />TEXT
-        </span>
+
+      {/* Logo */}
+      <div ref={logoContainer} className="relative flex flex-col items-center">
+        <Image
+          ref={logoRef}
+          src="/logo.svg"
+          width={150}
+          height={150}
+          alt="Logo"
+          style={{ transformOrigin: "center center" }}
+        />      
+
+      {/* Text reveal */}
+      <div ref={textLinesRef} className="space-y-6 text-center">
+        <p className="line text-8xl font-black uppercase">
+          Every <span className="text-yellow-300">weld</span>, every{" "}
+          <span className="text-yellow-300">bolt</span>
+        </p>
+        <p className="line text-8xl font-black uppercase">proof that our work</p>
+        <p className="line text-8xl font-black uppercase">
+          <span className="text-yellow-300">delivers</span> where it truly{" "}
+          <span className="text-yellow-300">matters</span>.
+        </p>
       </div>
+
+      {/* Feature image takeover */}
+      <Image
+        ref={featureImage}
+        className="fixed z-50 left-[10%]"
+        src="/w.jpg"
+        width={800}
+        height={800}
+        alt="Feature"
+      />
+      </div>   
     </section>
+    <section
+        ref={newSection}
+        className="relative h-[300vh] w-full overflow-hidden bg-gray-900"
+      >
+        <div ref={horizontalContainer} className="h-screen w-full flex items-center overflow-hidden">
+          <div ref={horizontalContent} className="flex h-full items-center gap-8 px-8">
+            {/* Horizontal scroll content */}
+            <div className="flex-shrink-0 w-screen h-full bg-blue-600 flex items-center justify-center">
+              <h2 className="text-6xl font-bold text-white">Panel 1</h2>
+            </div>
+            <div className="flex-shrink-0 w-screen h-full bg-red-600 flex items-center justify-center">
+              <h2 className="text-6xl font-bold text-white">Panel 2</h2>
+            </div>
+            <div className="flex-shrink-0 w-screen h-full bg-green-600 flex items-center justify-center">
+              <h2 className="text-6xl font-bold text-white">Panel 3</h2>
+            </div>
+            <div className="flex-shrink-0 w-screen h-full bg-purple-600 flex items-center justify-center">
+              <h2 className="text-6xl font-bold text-white">Panel 4</h2>
+            </div>
+            <div className="flex-shrink-0 w-screen h-full bg-yellow-600 flex items-center justify-center">
+              <h2 className="text-6xl font-bold text-white">Panel 5</h2>
+            </div>
+          </div>
+        </div>
+    </section>
+</>
   );
 }
-
 export default HorizontalScrollSection;

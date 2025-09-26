@@ -3,7 +3,7 @@ import { HeroSection,HorizontalScrollSection } from "@/components";
 
 export default function Home() {
   return (
-    <main>
+    <main className="">
       <HeroSection/>
       <HorizontalScrollSection/>
     </main>
