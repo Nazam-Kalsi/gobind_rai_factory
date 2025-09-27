@@ -5,6 +5,8 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { AnyARecord } from "dns";
+import HoriScrollContent from "./horiScrollContent";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -89,23 +91,23 @@ function HorizontalScrollSection() {
   }
 );
 
-gsap.fromTo(featureImage.current, 
-  {
-    scale:0.4
-  },{
-  y: "100vh",
-  scale: 1.5,
-  x: 0,
-  left: "50%",
-  transform: "translateX(-50%)",
-  ease: "power2.out",
-  scrollTrigger: {
-    trigger: newSection.current,
-    start: "top 90%",
-    end: "middle top",
-    scrub: 1,
-  },
-});
+// gsap.fromTo(featureImage.current, 
+//   {
+//     scale:0.4
+//   },{
+//   y: "100vh",
+//   scale: 1.5,
+//   x: 0,
+//   left: "50%",
+//   transform: "translateX(-50%)",
+//   ease: "power2.out",
+//   scrollTrigger: {
+//     trigger: newSection.current,
+//     start: "top 90%",
+//     end: "middle top",
+//     scrub: 1,
+//   },
+// });
 
 
     // 6️⃣ Pin the new section for horizontal scroll
@@ -128,7 +130,7 @@ gsap.fromTo(featureImage.current,
       scrollTrigger: {
         trigger: newSection.current,
         start: "top top",
-        end: "bottom top",
+        end: "bottom bottom",
         scrub: 1,
       },
     });
@@ -156,7 +158,7 @@ gsap.fromTo(featureImage.current,
       <div ref={logoContainer} className="relative flex flex-col items-center">
         <Image
           ref={logoRef}
-          src="/logo.svg"
+          src="https://placehold.co/600x400"
           width={150}
           height={150}
           alt="Logo"
@@ -180,7 +182,7 @@ gsap.fromTo(featureImage.current,
       <Image
         ref={featureImage}
         className="fixed z-50 left-[10%]"
-        src="/w.jpg"
+        src="https://placehold.co/600x400"
         width={800}
         height={800}
         alt="Feature"
@@ -189,25 +191,28 @@ gsap.fromTo(featureImage.current,
     </section>
     <section
         ref={newSection}
-        className="relative h-[300vh] w-full overflow-hidden bg-gray-900"
+        className="relative h-[200vh] w-full overflow-hidden"
       >
         <div ref={horizontalContainer} className="h-screen w-full flex items-center overflow-hidden">
-          <div ref={horizontalContent} className="flex h-full items-center gap-8 px-8">
+          <div ref={horizontalContent} className="flex h-full items-center gap-8">
             {/* Horizontal scroll content */}
             <div className="flex-shrink-0 w-screen h-full bg-blue-600 flex items-center justify-center">
-              <h2 className="text-6xl font-bold text-white">Panel 1</h2>
+            <HoriScrollContent heading={['Lorem ipsum dolor','Lorem ipsum dolor']} desciption={['Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus consectetur impedit reprehenderit molestias minus magni. Impedit assumenda velit consequatur temporibus explicabo debitis!','Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus consectetur impedit reprehenderit molestias minus magni. Impedit assumenda velit consequatur temporibus explicabo debitis!']}/>
             </div>
             <div className="flex-shrink-0 w-screen h-full bg-red-600 flex items-center justify-center">
-              <h2 className="text-6xl font-bold text-white">Panel 2</h2>
+            <HoriScrollContent heading={['','']} desciption={['','']}/>
             </div>
             <div className="flex-shrink-0 w-screen h-full bg-green-600 flex items-center justify-center">
-              <h2 className="text-6xl font-bold text-white">Panel 3</h2>
+              
+            <HoriScrollContent heading={['','']} desciption={['','']}/>
             </div>
             <div className="flex-shrink-0 w-screen h-full bg-purple-600 flex items-center justify-center">
-              <h2 className="text-6xl font-bold text-white">Panel 4</h2>
+              
+            <HoriScrollContent heading={['','']} desciption={['','']}/>
             </div>
             <div className="flex-shrink-0 w-screen h-full bg-yellow-600 flex items-center justify-center">
-              <h2 className="text-6xl font-bold text-white">Panel 5</h2>
+              
+            <HoriScrollContent heading={['','']} desciption={['','']}/>
             </div>
           </div>
         </div>

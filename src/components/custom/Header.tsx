@@ -6,11 +6,12 @@ import { Dock, DockIcon } from '@/components/ui/dock';
 import { BadgeInfo, Contact2Icon, Facebook, Home, Instagram } from 'lucide-react';
 import Link from 'next/link';
 import { AnimatedThemeToggler } from '../ui/animated-theme-toggler';
+import Image from 'next/image';
 
 const DATA = {
   navbar: [
     { href: '/', icon: <Home />, label: 'Home' },
-    { href: '/about', icon: <BadgeInfo />, label: 'About' },
+    { href: '/products', icon: <BadgeInfo />, label: 'Products' },
     { href: '/contact', icon: <Contact2Icon />, label: 'Contact' },
   ],
   contact: {
@@ -31,8 +32,18 @@ const DATA = {
 
 function Header() {
   return (
-    <nav className="fixed w-full z-[999]">
-      <div className="flex flex-col items-center justify-center">
+    <nav className="fixed w-full z-[999] px-8 ">      
+      <div className="flex items-center justify-center">
+        <div>
+          <Image
+          src={'https://placehold.co/40'}
+          alt='logo'
+          width={100}
+          height={100}
+          className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-125 group-hover:rotate-2 group-hover:brightness-110"
+
+          />
+        </div>
         <TooltipProvider>
           <Dock direction="middle">
             {DATA.navbar.map((item) => (
@@ -72,9 +83,9 @@ function Header() {
             <DockIcon>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Link href="" aria-label="Theme" className={cn(buttonVariants({ variant: 'ghost', size: 'icon' }), 'size-12 rounded-full ')}>
+                  <p aria-label="Theme" className={cn(buttonVariants({ variant: 'ghost', size: 'icon' }), 'size-12 rounded-full ')}>
                   <AnimatedThemeToggler/>
-                    </Link>
+                    </p>
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>Theme</p>

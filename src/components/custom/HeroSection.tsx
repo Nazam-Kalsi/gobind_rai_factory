@@ -125,16 +125,16 @@ gsap.set(secondaryImage2, {
   return (
     <section
       ref={containerRef}
-      className="overflow-hidden relative h-[95vh] flex items-center justify-center"
+      className="overflow-hidden relative h-[100vh] flex items-center justify-center"
       style={{
         contain: 'layout style paint',
         willChange: 'auto'
       }}>
-      <div ref={coverRef} className="absolute inset-0 bg-red-900 z-[19] pointer-events-none" />
+      <div ref={coverRef} className="absolute inset-0 bg-red-900 dark:bg-black z-[19] pointer-events-none" />
 
       <div
         ref={yellowDivRef}
-        className="flex items-center justify-center absolute inset-0 bg-yellow-400 z-30 pointer-events-none"
+        className="flex items-center justify-center absolute inset-0 bg-yellow-400 z-30 pointer-events-none bg-gradient-to-r dark:from-slate-900 dark:via-purple-900 dark:to-slate-900"
         style={{
           transform: 'skewY(12deg)',
           backfaceVisibility: 'hidden'
@@ -169,18 +169,20 @@ gsap.set(secondaryImage2, {
 
 
         {/* main image */}
+        <div className='absolute right-0 z-[-2]'>
         <Image
-          className="object-cover absolute right-0 z-[-2]"
-          src="/w.jpg"
+          className="object-cover"
+          src="https://placehold.co/400x500"
           width={400}
           height={800}
           alt="Picture of the author"
-        />
+          />
+          </div>
         {/* img1 */}
         <Image
         ref={secondaryImageRef1}
           className="absolute -top-12 left-12 -z-[2]"
-          src="/w.jpg"
+          src="https://placehold.co/600x400"
           width={200}
           height={200}
           alt="Picture of the author"
@@ -189,7 +191,7 @@ gsap.set(secondaryImage2, {
         <Image
         ref={secondaryImageRef2}
           className="absolute -bottom-12 left-1/2 -z-[2]"
-          src="/w.jpg"
+          src="https://placehold.co/600x400"
           width={200}
           height={200}
           alt="Picture of the author"

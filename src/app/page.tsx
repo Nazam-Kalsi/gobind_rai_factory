@@ -1,11 +1,13 @@
 "use client"
-import { HeroSection,HorizontalScrollSection } from "@/components";
+import { HeroSection,HorizontalScrollSection, Products, Reviews } from "@/components";
 
 export default function Home() {
   return (
     <main className="">
       <HeroSection/>
       <HorizontalScrollSection/>
+      <Products/>
+      <Reviews/>
     </main>
   );
 }
