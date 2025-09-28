@@ -122,10 +122,10 @@ function HorizontalScrollSection() {
     
     <section className="relative z-[9] w-full rounded-[4rem] py-8 bg-yellow-300 dark:bg-[url(/grad1.jpeg)]  bg-fixed bg-cover ">
       <p
-        className="text-center mt-6 font-black text-6xl p-8 uppercase bg-clip-text text-transparent bg-gradient-to-bl from-cyan-600 via-lime-50 to-amber-500">
+        className="text-center mt-6 font-black text-6xl p-8 uppercase bg-clip-text text-transparent bg-gradient-to-bl dark:from-cyan-600 dark:via-lime-50 dark:to-amber-500 from-orange-400 via-red-900 to-amber-500">
         Our Products
       </p>
-      <div className="flex justify-center items-center gap-3 flex-wrap">
+      <div className="flex justify-center items-center gap-3 flex-wrap px-4">
         {premiumProducts.map((product, index) => (
           <div
             key={index}

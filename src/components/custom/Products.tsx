@@ -13,7 +13,7 @@ function Products() {
         className="text-center font-black text-6xl p-8 uppercase bg-clip-text text-transparent bg-gradient-to-bl from-cyan-600 via-lime-50 to-amber-500">
         Our Products
       </p>
-      <div className="flex justify-center items-center gap-3 flex-wrap">
+      <div className="flex justify-center items-center gap-3 flex-wrap px-4">
         {premiumProducts.map((product, index) => (
           <div
             key={index}

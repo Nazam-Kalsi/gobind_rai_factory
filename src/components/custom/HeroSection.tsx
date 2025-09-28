@@ -1,9 +1,9 @@
-'use client';
-import React, { useRef } from 'react';
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
-import Image from 'next/image';
-import { HyperText } from '@/components/ui//hyper-text';
+"use client";
+import React, { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import Image from "next/image";
+import { HyperText } from "@/components/ui/hyper-text";
 
 function HeroSection() {
   const containerRef = useRef(null);
@@ -13,188 +13,200 @@ function HeroSection() {
   const secondaryImageRef1 = useRef(null);
   const secondaryImageRef2 = useRef(null);
 
-  useGSAP(
-    () => {
-      const yellowDiv = yellowDivRef.current;
-      const cover = coverRef.current;
-      const mainDiv = mainDivRef.current;
-      const secondaryImage1 = secondaryImageRef1.current;
-      const secondaryImage2 = secondaryImageRef2.current;
+  useGSAP(() => {
+    const yellowDiv = yellowDivRef.current;
+    const cover = coverRef.current;
+    const mainDiv = mainDivRef.current;
+    const secondaryImage1 = secondaryImageRef1.current;
+    const secondaryImage2 = secondaryImageRef2.current;
 
-      // Early return if refs aren't ready
-      if (!yellowDiv || !cover || !mainDiv) return;
+    if (!yellowDiv || !cover || !mainDiv) return;
 
-      // Set initial states with will-change for better performance
-      gsap.set([yellowDiv, cover, mainDiv,secondaryImage1,secondaryImage2], { willChange: 'transform, opacity' });
+    gsap.set([yellowDiv, cover, mainDiv, secondaryImage1, secondaryImage2], {
+      willChange: "transform, opacity",
+    });
 
-      gsap.set(yellowDiv, {
-        scale: 0,
-        y: 0,
-        transformOrigin: 'center center',
-        force3D: true
-      });
+    gsap.set(yellowDiv, {
+      scale: 0,
+      y: 0,
+      transformOrigin: "center center",
+      force3D: true,
+    });
 
-      gsap.set(mainDiv, {
-        opacity: 0,
-        scale: 1.4,
-        transformOrigin: 'center center',
-        force3D: true
-      });
-     gsap.set(secondaryImage1, {
-  height: '0%',
-  transformOrigin: 'top center',
-  force3D: true,
-  overflow: 'hidden'
-});
+    gsap.set(mainDiv, {
+      opacity: 0,
+      scale: 1.4,
+      transformOrigin: "center center",
+      force3D: true,
+    });
 
-gsap.set(secondaryImage2, {
-  height: '0%',
-  transformOrigin: 'top center',
-  force3D: true,
-  overflow: 'hidden'
-});
+    gsap.set(secondaryImage1, {
+      height: "0%",
+      transformOrigin: "top center",
+      force3D: true,
+      overflow: "hidden",
+    });
 
-      gsap.set(cover, {
-        opacity: 1,
-        force3D: true
-      });
+    gsap.set(secondaryImage2, {
+      height: "0%",
+      transformOrigin: "top center",
+      force3D: true,
+      overflow: "hidden",
+    });
 
-      const tl = gsap.timeline({
-        onComplete: () => {
-          gsap.set([yellowDiv, cover, mainDiv], { willChange: 'auto' });
-        }
-      });
+    gsap.set(cover, {
+      opacity: 1,
+      force3D: true,
+    });
 
-      tl.to(yellowDiv, {
-        scale: 2.5,
-        duration: 1.8,
-        ease: 'expo.inOut'
+    const tl = gsap.timeline({
+      onComplete: () => {
+        gsap.set([yellowDiv, cover, mainDiv], { willChange: "auto" });
+      },
+    });
+
+    tl.to(yellowDiv, {
+      scale: 2.5,
+      duration: 1.8,
+      ease: "expo.inOut",
+    })
+      .to(
+        mainDiv,
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          ease: "expo.out",
+        },
+        "-=0.1"
+      )
+      .to(
+        yellowDiv,
+        {
+          y: "-200%",
+          duration: 1,
+          ease: "back.out(1.7)",
+        },
+        "-=1"
+      )
+      .to(
+        cover,
+        {
+          opacity: 0,
+          duration: 0.5,
+          ease: "power1.out",
+        },
+        "-=1"
+      )
+      .to({}, { duration: 0.5 })
+      .to(secondaryImage1, {
+        height: "40%",
+        duration: 1,
+        ease: "power2.out",
       })
-
-        .to(
-          mainDiv,
-          {
-            opacity: 1,
-            scale: 1,
-            duration: 1,
-            ease: 'expo.out'
-          },
-          '-=0.1'
-        )
-
-        .to(
-          yellowDiv,
-          {
-            y: '-200%',
-            duration: 1,
-            ease: 'back.out(1.7)'
-          },
-          '-=1'
-        )
-
-        .to(
-          cover,
-          {
-            opacity: 0,
-            duration: 0.5,
-            ease: 'power1.out'
-          },
-          '-=1'
-        )
-
-       .to({}, { duration: 0.5 })
-
-.to(secondaryImage1, {
-  height: '40%',
-  duration: 1,
-  ease: 'power2.out'
-})
-
-.to(secondaryImage2, {
-  height: '40%',
-  duration: 1,
-  ease: 'power2.out'
-}, '-=0.8');
-    },
-    {
-      scope: containerRef,
-      dependencies: []
-    }
-  );
+      .to(
+        secondaryImage2,
+        {
+          height: "40%",
+          duration: 1,
+          ease: "power2.out",
+        },
+        "-=0.8"
+      );
+  });
 
   return (
     <section
       ref={containerRef}
       className="overflow-hidden relative h-[100vh] flex items-center justify-center"
       style={{
-        contain: 'layout style paint',
-        willChange: 'auto'
-      }}>
-      <div ref={coverRef} className="absolute inset-0 bg-red-900 dark:bg-black z-[19] pointer-events-none" />
+        contain: "layout style paint",
+        willChange: "auto",
+      }}
+    >
+      <div
+        ref={coverRef}
+        className="absolute inset-0 bg-red-900 dark:bg-black z-[19] pointer-events-none"
+      />
 
       <div
         ref={yellowDivRef}
         className="flex items-center justify-center absolute inset-0 bg-yellow-400 z-30 pointer-events-none bg-gradient-to-r dark:from-slate-900 dark:via-purple-900 dark:to-slate-900"
         style={{
-          transform: 'skewY(12deg)',
-          backfaceVisibility: 'hidden'
+          transform: "skewY(12deg)",
+          backfaceVisibility: "hidden",
         }}
-      >
-      </div>
-        <Image
-        className="absolute top-1/2 left-1/2 z-[99] fade-in-out"
-          src="/tractor.gif"
-          width={80}
-          height={80}
-          alt="Wait"
-        />
+      />
 
+      {/* Loader GIF */}
+      <Image
+        className="absolute top-1/2 left-1/2 z-[99] fade-in-out"
+        src="/tractor.gif"
+        width={60}
+        height={60}
+        alt="Wait"
+      />
+
+      {/* MAIN CONTENT */}
       <section
         ref={mainDivRef}
-        className="relative px-1 flex justify-evenly items-center w-full font-bold  z-10"
+        className="relative px-2 sm:px-6 flex flex-col lg:flex-row justify-center lg:justify-start items-center text-center lg:text-left w-full font-bold z-10 "
         style={{
-          backfaceVisibility: 'hidden'
-        }}>
-            {/* text */}
-        <div className="w-full">
-          <span className="tracking-wide inline-block text-8xl font-black ">Built for</span>&nbsp; &nbsp; &nbsp;
-          <HyperText as="span" className="p-0  text-8xl font-black text-yellow-500 ">
+          backfaceVisibility: "hidden",
+        }}
+      >
+        {/* Text */}
+        <div className="w-full max-w-2xl space-y-2 sm:space-y-4">
+          <span className="tracking-wide inline-block text-4xl sm:text-6xl lg:text-8xl font-black">
+            Built for
+          </span>
+          &nbsp;
+          <HyperText
+            as="span"
+            className="p-0 text-4xl sm:text-6xl lg:text-8xl font-black text-yellow-500"
+          >
             Farmers.
           </HyperText>
-          <p className="text-8xl font-black tracking-wide ">Crafted for </p>
-          <HyperText as="span" className=" p-0 text-8xl font-black text-red-500">
+          <p className="text-3xl sm:text-5xl lg:text-8xl font-black tracking-wide">
+            Crafted for
+          </p>
+          <HyperText
+            as="span"
+            className="p-0 text-3xl sm:text-5xl lg:text-8xl font-black text-red-500"
+          >
             Generations
           </HyperText>
         </div>
 
-
-        {/* main image */}
-        <div className='absolute right-0 z-[-2]'>
-        <Image
-          className="object-cover"
-          src="https://placehold.co/400x500"
-          width={400}
-          height={800}
-          alt="Picture of the author"
+        {/* Main image */}
+        <div className="relative w-[250px] sm:w-[300px] lg:w-[400px] mt-8 lg:mt-0 lg:absolute lg:right-0 z-[-2]">
+          <Image
+            className="object-cover"
+            src="https://placehold.co/400x500"
+            width={400}
+            height={800}
+            alt="Main Visual"
           />
-          </div>
-        {/* img1 */}
+        </div>
+
+        {/* Decorative img1 */}
         <Image
-        ref={secondaryImageRef1}
-          className="absolute -top-12 left-12 -z-[2]"
+          ref={secondaryImageRef1}
+          className="absolute top-4 sm:-top-12 left-4 sm:left-12 -z-[2] w-[120px] sm:w-[180px] lg:w-[200px]"
           src="https://placehold.co/600x400"
           width={200}
           height={200}
-          alt="Picture of the author"
+          alt="Decorative"
         />
-        {/* img2 */}
+
+        {/* Decorative img2 */}
         <Image
-        ref={secondaryImageRef2}
-          className="absolute -bottom-12 left-1/2 -z-[2]"
+          ref={secondaryImageRef2}
+          className="absolute bottom-4 sm:-bottom-12 left-1/2 -z-[2] w-[120px] sm:w-[180px] lg:w-[200px]"
           src="https://placehold.co/600x400"
           width={200}
           height={200}
-          alt="Picture of the author"
+          alt="Decorative"
         />
       </section>
     </section>
