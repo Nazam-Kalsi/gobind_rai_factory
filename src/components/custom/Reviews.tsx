@@ -101,26 +101,26 @@ function Reviews() {
 
   useGSAP(() => {
 
-    gsap.to(pinnedRef.current,{
-      scrollTrigger:{
-        trigger: pinnedRef.current,
-        start: "top top",
-        end: "bottom top",
-        pin:true,
-        pinSpacing:false,
-        scrub:1
-      }
-    })
-
-    // gsap.to(reviewsRef.current,{
+    // gsap.to(pinnedRef.current,{
     //   scrollTrigger:{
-    //     trigger: reviewsRef.current,
+    //     trigger: pinnedRef.current,
     //     start: "top top",
     //     end: "bottom top",
     //     pin:true,
     //     pinSpacing:false,
     //     scrub:1
-    // }})
+    //   }
+    // })
+
+    gsap.to(reviewsRef.current,{
+      scrollTrigger:{
+        trigger: reviewsRef.current,
+        start: "bottom bottom-=40%",
+        end: "bottom top-=30%",
+        pin:true,
+        pinSpacing:false,
+        scrub:1
+    }})
     // Header animation
     gsap.fromTo(headerRef.current, 
       { 
@@ -243,8 +243,6 @@ function Reviews() {
             Don't just take our word for it. Here's what our amazing clients have to say about their experience working with us.
           </p>
         </div>
-        <div ref={pinnedRef} className='absolute  top-0 h-[100vh] w-[50vw] z-[999] '></div>
-
           {/* Reviews Grid */}
           <div ref={reviewsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {reviews.map((review) => (
@@ -300,13 +298,6 @@ function Reviews() {
               </div>
               <span className="text-sm font-medium">Join 1000+ satisfied clients</span>
             </div>
-            
-            <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl font-semibold text-white shadow-lg hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105">
-              Start Your Project Today
-              <svg className="w-5 h-5 ml-2 inline-block transform group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </button>
           </div>
       </div>
     </section>

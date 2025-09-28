@@ -4,7 +4,7 @@ import React from 'react'
 
 function Footer() {
   return (
-    <section className='relative z-[999] bg-yellow-300 dark:bg-violet-900 overflow-hidden rounded-[3rem] m-4'>
+    <section className='relative z-[99] bg-yellow-300 dark:bg-violet-900 overflow-hidden rounded-[3rem] m-4'>
       {/* Background pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(120,119,198,0.1),transparent_70%)]"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(59,130,246,0.08),transparent_60%)]"></div>
@@ -18,8 +18,8 @@ function Footer() {
                <Image
                   className="object-cover"
                   src="https://placehold.co/60"
-                  width={100}
-                  height={100}
+                  width={125}
+                  height={125}
                   alt="Logo"
                 />
               <h3 className='text-3xl lg:text-4xl font-black leading-tight'>
@@ -43,10 +43,10 @@ function Footer() {
               </h4>
               <ul className='space-y-3'>
                 {[
-                  { name: 'Web Development', href: '#' },
-                  { name: 'Mobile Apps', href: '#' },
-                  { name: 'UI/UX Design', href: '#' },
-                  { name: 'Consulting', href: '#' }
+                  { name: 'Tractor', href: '#' },
+                  { name: 'Tractor', href: '#' },
+                  { name: 'Tractor', href: '#' },
+                  { name: 'Tractor', href: '#' }
                 ].map((item, index) => (
                   <li key={index}>
                     <Link 
@@ -68,7 +68,7 @@ function Footer() {
 
             {/* Company Column */}
             <div className='space-y-6'>
-              <h4 className='text-lg font-semibold uppercase tracking-wider'>
+              <h4 className='text-lg font-bold uppercase tracking-wider'>
                 Contact
               </h4>
               <ul className='space-y-3'>
