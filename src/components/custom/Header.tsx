@@ -3,7 +3,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Dock, DockIcon } from '@/components/ui/dock';
-import { BadgeInfo, Contact2Icon, Facebook, Home, Instagram } from 'lucide-react';
+import { BadgeInfo, Contact2Icon, Facebook, Home, Instagram, Tractor } from 'lucide-react';
 import Link from 'next/link';
 import { AnimatedThemeToggler } from '../ui/animated-theme-toggler';
 import Image from 'next/image';
@@ -11,7 +11,7 @@ import Image from 'next/image';
 const DATA = {
   navbar: [
     { href: '/', icon: <Home />, label: 'Home' },
-    { href: '/products', icon: <BadgeInfo />, label: 'Products' },
+    { href: '/products', icon: <Tractor/>, label: 'Products' },
     { href: '/contact', icon: <Contact2Icon />, label: 'Contact' },
   ],
   contact: {
@@ -83,7 +83,7 @@ function Header() {
             <DockIcon>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <p aria-label="Theme" className={cn(buttonVariants({ variant: 'ghost', size: 'icon' }), 'size-12 rounded-full ')}>
+                  <p aria-label="Theme" className={cn(buttonVariants({ variant: 'ghost', size: 'icon' }), 'size-12 rounded-full cusror-pointer')}>
                   <AnimatedThemeToggler/>
                     </p>
                 </TooltipTrigger>
