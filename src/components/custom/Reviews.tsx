@@ -158,8 +158,7 @@ function Reviews() {
         stagger: 0.1,
         scrollTrigger: {
           trigger: reviewsRef.current,
-          start: "top 85%",
-          end: "bottom 15%",
+          start: "top 95%",
         }
       }
     )
@@ -172,7 +171,7 @@ function Reviews() {
       ease: "sine.inOut",
       repeat: -1,
       yoyo: true,
-      stagger: "random(0, 2)"
+      // stagger:3,
     })
 
     // Hover animations
