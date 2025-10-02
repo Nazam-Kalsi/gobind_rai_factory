@@ -164,8 +164,8 @@ function HorizontalScrollSection() {
           {/* Feature image takeover */}
           <Image
             ref={featureImage}
-            className="fixed z-50 left-1/2 -translate-x-1/2 w-[150px] sm:w-[250px] lg:w-[400px]"
-            src="https://placehold.co/600x400"
+            className="fixed z-50 left-1/2 -translate-x-1/2 w-[200px] sm:w-[300px] lg:w-[500px] rounded-2xl overflow-hidden"
+            src="/redclose.png"
             width={800}
             height={800}
             alt="Feature"
@@ -176,7 +176,7 @@ function HorizontalScrollSection() {
       {/* Horizontal Scroll Section */}
       <section
         ref={newSection}
-        className="relative h-[200vh] w-full overflow-hidden"
+        className="relative h-[360vh] w-full overflow-hidden"
       >
         <div
           ref={horizontalContainer}
@@ -184,29 +184,50 @@ function HorizontalScrollSection() {
         >
           <div
             ref={horizontalContent}
-            className="flex h-full items-center gap-4 sm:gap-8"
+            className="flex h-full items-center"
           >
             {/* Slides */}
-            <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full bg-blue-600 flex items-center justify-center">
+            <div className="flex-shrink-0 w-[100vw] sm:w-screen h-full bg-gradient-to-tr from-blue-700 via-blue-800 to-black">
               <HoriScrollContent
                 heading={["Lorem ipsum dolor", "Lorem ipsum dolor"]}
                 desciption={[
                   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus consectetur impedit reprehenderit molestias minus magni.",
                   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus consectetur impedit reprehenderit molestias minus magni.",
                 ]}
+                imageUrl={['/img2.jpg', '/weights.png']}
               />
             </div>
-            <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full bg-red-600 flex items-center justify-center">
-              <HoriScrollContent heading={["", ""]} desciption={["", ""]} />
+            <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full flex items-center justify-center bg-gradient-to-tl from-red-500 via-red-800 to-black">
+              <HoriScrollContent  heading={["Lorem ipsum dolor", "Lorem ipsum dolor"]}
+                desciption={[
+                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus consectetur impedit reprehenderit molestias minus magni.",
+                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus consectetur impedit reprehenderit molestias minus magni.",
+                ]}
+                imageUrl={['/2red.png', '/redclose.png']} />
             </div>
-            <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full bg-green-600 flex items-center justify-center">
-              <HoriScrollContent heading={["", ""]} desciption={["", ""]} />
+            <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full flex items-center justify-center bg-gradient-to-l from-green-600 to-green-900">
+              <HoriScrollContent heading={["Lorem ipsum dolor", "Lorem ipsum dolor"]}
+                desciption={[
+                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus consectetur impedit reprehenderit molestias minus magni.",
+                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus consectetur impedit reprehenderit molestias minus magni.",
+                ]}
+                imageUrl={['/green.jpg', '/u.png']}  />
             </div>
-            <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full bg-purple-600 flex items-center justify-center">
-              <HoriScrollContent heading={["", ""]} desciption={["", ""]} />
+            <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full flex items-center justify-center bg-gradient-to-br from-purple-800 via-violet-900 to-purple-800">
+              <HoriScrollContent heading={["Lorem ipsum dolor", "Lorem ipsum dolor"]}
+                desciption={[
+                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus consectetur impedit reprehenderit molestias minus magni.",
+                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus consectetur impedit reprehenderit molestias minus magni.",
+                ]}
+                imageUrl={['/u.png', '/2green.png']}  />
             </div>
-            <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full bg-yellow-600 flex items-center justify-center">
-              <HoriScrollContent heading={["", ""]} desciption={["", ""]} />
+            <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full flex items-center justify-center bg-gradient-to-tl to-orange-500 from-yellow-600">
+               <HoriScrollContent heading={["Lorem ipsum dolor", "Lorem ipsum dolor"]}
+                desciption={[
+                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus consectetur impedit reprehenderit molestias minus magni.",
+                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus consectetur impedit reprehenderit molestias minus magni.",
+                ]}
+                imageUrl={['/u.png', '/2green.png']}  />
             </div>
           </div>
         </div>

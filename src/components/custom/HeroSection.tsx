@@ -4,6 +4,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
 import { HyperText } from "@/components/ui/hyper-text";
+import { WavyBackground } from "../ui/wavy-background";
+import { useTheme } from "next-themes";
 
 function HeroSection() {
   const containerRef = useRef(null);
@@ -12,6 +14,10 @@ function HeroSection() {
   const mainDivRef = useRef(null);
   const secondaryImageRef1 = useRef(null);
   const secondaryImageRef2 = useRef(null);
+  const secondaryImageRef3 = useRef(null);
+  const { theme } = useTheme();
+  const bgColor = theme === "dark" ? "#000000" : "#ffffff";
+
 
   useGSAP(() => {
     const yellowDiv = yellowDivRef.current;
@@ -19,6 +25,7 @@ function HeroSection() {
     const mainDiv = mainDivRef.current;
     const secondaryImage1 = secondaryImageRef1.current;
     const secondaryImage2 = secondaryImageRef2.current;
+    const secondaryImage3 = secondaryImageRef3.current;
 
     if (!yellowDiv || !cover || !mainDiv) return;
 
@@ -48,6 +55,12 @@ function HeroSection() {
     });
 
     gsap.set(secondaryImage2, {
+      height: "0%",
+      transformOrigin: "top center",
+      force3D: true,
+      overflow: "hidden",
+    });
+    gsap.set(secondaryImage3, {
       height: "0%",
       transformOrigin: "top center",
       force3D: true,
@@ -112,13 +125,25 @@ function HeroSection() {
           ease: "power2.out",
         },
         "-=0.8"
+      )
+      .to(
+        secondaryImage3,
+        {
+          height: "40%",
+          duration: 1,
+          ease: "power2.out",
+        }
+        
       );
   });
 
   return (
+    
+    
+    <WavyBackground className="w-[100vw] overflow-x-hidden"    backgroundFill={bgColor} >
     <section
       ref={containerRef}
-      className="overflow-hidden relative h-[100vh] flex items-center justify-center"
+      className="overflow-hidden w-screen relative h-[100vh] flex items-center justify-center"
       style={{
         contain: "layout style paint",
         willChange: "auto",
@@ -179,12 +204,12 @@ function HeroSection() {
         </div>
 
         {/* Main image */}
-        <div className="relative w-[250px] sm:w-[300px] lg:w-[400px] mt-8 lg:mt-0 lg:absolute lg:right-0 z-[-2]">
+        <div className="relative w-[450px] sm:w-[300px] lg:w-[800px] mt-8 lg:mt-0 lg:absolute lg:right-0 z-[-2]">
           <Image
-            className="object-cover"
-            src="https://placehold.co/400x500"
-            width={400}
-            height={800}
+            className=""
+            src="/png1.png"
+            width={1000}
+            height={1000}
             alt="Main Visual"
           />
         </div>
@@ -192,24 +217,33 @@ function HeroSection() {
         {/* Decorative img1 */}
         <Image
           ref={secondaryImageRef1}
-          className="absolute top-4 sm:-top-12 left-4 sm:left-12 -z-[2] w-[120px] sm:w-[180px] lg:w-[200px]"
-          src="https://placehold.co/600x400"
+          className="absolute top-4 sm:top-[15%] left-4 sm:left-[35%] z-[-12] w-[120px] sm:w-[180px] lg:w-[150px] rounded-lg overflow-hidden"
+          src="/img2.jpg"
           width={200}
-          height={200}
+          height={400}
           alt="Decorative"
         />
 
         {/* Decorative img2 */}
         <Image
+          ref={secondaryImageRef3}
+          className="absolute bottom-4 sm:-bottom-12 left-1/2 z-[-12] w-[120px] sm:w-[180px] lg:w-[180px] rounded-lg overflow-hidden"
+          src="/green.jpg"
+          width={200}
+          height={200}
+          alt="Decorative"
+        />
+        <Image
           ref={secondaryImageRef2}
-          className="absolute bottom-4 sm:-bottom-12 left-1/2 -z-[2] w-[120px] sm:w-[180px] lg:w-[200px]"
-          src="https://placehold.co/600x400"
+          className="absolute bottom-4 sm:top-0 right-[6%] z-[-12] w-[120px] sm:w-[180px] lg:w-[180px] rounded-lg overflow-hidden"
+          src="/redclose.png"
           width={200}
           height={200}
           alt="Decorative"
         />
       </section>
     </section>
+    </WavyBackground>
   );
 }
 
