@@ -5,7 +5,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import HoriScrollContent from "./horiScrollContent";
+import HoriScrollContent from "./HoriScrollContent";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -30,6 +30,16 @@ function HorizontalScrollSection() {
       },
     });
 
+   gsap.to(container.current, {
+      backgroundColor: "#837de2", // target color
+      ease: "none",
+      scrollTrigger: {
+        trigger: container.current,
+        start: "top 80%",   // when section hits middle of screen
+        end: "bottom center",  // until bottom hits middle
+        scrub: true,           // smooth scrubbing
+      },
+    });
     // Tractor movement
     gsap.to(tractorRef.current, {
       x: "2700",
@@ -122,7 +132,7 @@ function HorizontalScrollSection() {
       {/* First Scroll Section */}
       <section
         ref={container}
-        className="relative flex flex-col items-center h-[400vh] justify-start w-full overflow-hidden"
+        className="relative flex flex-col items-center h-[400vh] justify-start w-full overflow-hidden rounded-t-[4rem]"
       >
         {/* Tractor */}
         <Image
@@ -187,42 +197,51 @@ function HorizontalScrollSection() {
             className="flex h-full items-center"
           >
             {/* Slides */}
-            <div className="flex-shrink-0 w-[100vw] sm:w-screen h-full bg-gradient-to-tr from-blue-700 via-blue-800 to-black">
+            <div className="flex-shrink-0 w-[100vw] sm:w-screen h-full bg-gradient-to-tr from-blue-700 via-blue-400 to-violet-400 rounded-tl-4xl">
               <HoriScrollContent
-                heading={["Lorem ipsum dolor", "Lorem ipsum dolor"]}
+              headingColor="text-blue-900"
+                heading={["Front Tractor Weights", "Heavy Duty Front Weights"]}
                 desciption={[
-                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus consectetur impedit reprehenderit molestias minus magni.",
-                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus consectetur impedit reprehenderit molestias minus magni.",
+                  "Engineered for strength and reliability, our front tractor weights keep your machine firmly grounded, improving balance, grip, and control. Perfect for handling heavy equipment and ensuring safe, efficient performance across all terrains.",
+                  "Our robust front tractor weights provide stability, prevent lifting, and enhance traction. Designed for tough farming conditions, they ensure safer handling and maximum efficiency when operating heavy implements on the field.",
                 ]}
                 imageUrl={['/img2.jpg', '/weights.png']}
               />
             </div>
-            <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full flex items-center justify-center bg-gradient-to-tl from-red-500 via-red-800 to-black">
-              <HoriScrollContent  heading={["Lorem ipsum dolor", "Lorem ipsum dolor"]}
+            <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full flex items-center justify-center bg-gradient-to-tl from-red-400 via-red-500 to-orange-100">
+              <HoriScrollContent 
+               headingColor="text-red-900"
+               heading={["Lorem ipsum dolor", "Lorem ipsum dolor"]}
                 desciption={[
                   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus consectetur impedit reprehenderit molestias minus magni.",
                   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus consectetur impedit reprehenderit molestias minus magni.",
                 ]}
                 imageUrl={['/2red.png', '/redclose.png']} />
             </div>
-            <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full flex items-center justify-center bg-gradient-to-l from-green-600 to-green-900">
-              <HoriScrollContent heading={["Lorem ipsum dolor", "Lorem ipsum dolor"]}
+            <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full flex items-center justify-center bg-gradient-to-l from-green-400 to-green-600">
+              <HoriScrollContent
+              headingColor="text-green-900"
+              heading={["Lorem ipsum dolor", "Lorem ipsum dolor"]}
                 desciption={[
                   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus consectetur impedit reprehenderit molestias minus magni.",
                   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus consectetur impedit reprehenderit molestias minus magni.",
                 ]}
                 imageUrl={['/green.jpg', '/u.png']}  />
             </div>
-            <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full flex items-center justify-center bg-gradient-to-br from-purple-800 via-violet-900 to-purple-800">
-              <HoriScrollContent heading={["Lorem ipsum dolor", "Lorem ipsum dolor"]}
+            <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full flex items-center justify-center bg-gradient-to-br from-purple-500 via-violet-500 to-purple-500">
+              <HoriScrollContent 
+              headingColor="text-purple-900"
+              heading={["Lorem ipsum dolor", "Lorem ipsum dolor"]}
                 desciption={[
                   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus consectetur impedit reprehenderit molestias minus magni.",
                   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus consectetur impedit reprehenderit molestias minus magni.",
                 ]}
                 imageUrl={['/u.png', '/2green.png']}  />
             </div>
-            <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full flex items-center justify-center bg-gradient-to-tl to-orange-500 from-yellow-600">
-               <HoriScrollContent heading={["Lorem ipsum dolor", "Lorem ipsum dolor"]}
+            <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full flex items-center justify-center bg-gradient-to-tl to-orange-400 from-yellow-400">
+               <HoriScrollContent 
+               headingColor="text-orange-900"
+               heading={["Lorem ipsum dolor", "Lorem ipsum dolor"]}
                 desciption={[
                   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus consectetur impedit reprehenderit molestias minus magni.",
                   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus consectetur impedit reprehenderit molestias minus magni.",

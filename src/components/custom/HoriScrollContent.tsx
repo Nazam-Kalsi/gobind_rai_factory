@@ -5,10 +5,12 @@ type Props = {
   imageUrl?: string[];
   heading: string[];
   desciption: string[];
+  headingColor:string;
 };
 
 function HoriScrollContent({
   heading,
+  headingColor,
   desciption,
   imageUrl = [
     "https://placehold.co/400",
@@ -27,7 +29,7 @@ function HoriScrollContent({
           className="rounded-xl object-fit"
         />
         <div className="text-center md:text-left space-y-4 max-w-2xl">
-          <h2 className="text-2xl md:text-4xl font-bold">{heading[0]}</h2>
+          <h2 className={`text-2xl md:text-5xl font-black ${headingColor}`}>{heading[0]}</h2>
           <p className="text-base md:text-lg leading-relaxed text-gray-200">
             {desciption[0]}
           </p>
@@ -44,7 +46,7 @@ function HoriScrollContent({
           className="rounded-xl object-cover"
         />
         <div className="text-center md:text-left space-y-4 max-w-2xl">
-          <h2 className="text-2xl md:text-4xl font-bold">{heading[1]}</h2>
+          <h2 className={`  text-2xl md:text-5xl font-black ${headingColor}`}>{heading[1]}</h2>
           <p className="text-base md:text-lg leading-relaxed text-gray-200">
             {desciption[1]}
           </p>

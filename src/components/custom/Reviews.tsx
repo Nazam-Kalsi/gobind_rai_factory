@@ -3,6 +3,7 @@ import React, { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { reviews } from '@/app/[data]'
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -14,90 +15,7 @@ function Reviews() {
   const pinnedRef = useRef(null)
 
   // Sample reviews data
-  const reviews = [
-    {
-      id: 1,
-      name: "Sarah Johnson",
-      role: "CEO, TechStart",
-      avatar: "SJ",
-      rating: 5,
-      review: "Absolutely phenomenal service! The team delivered beyond our expectations and transformed our digital presence completely.",
-      color: "from-purple-500 to-pink-500"
-    },
-    {
-      id: 2,
-      name: "Michael Chen",
-      role: "Founder, InnovateLab",
-      avatar: "MC",
-      rating: 5,
-      review: "Working with this team was a game-changer. Their attention to detail and innovative approach is unmatched.",
-      color: "from-blue-500 to-cyan-500"
-    },
-    {
-      id: 3,
-      name: "Emma Rodriguez",
-      role: "CTO, DataFlow",
-      avatar: "ER",
-      rating: 5,
-      review: "The level of professionalism and expertise is outstanding. They turned our vision into reality seamlessly.",
-      color: "from-green-500 to-emerald-500"
-    },
-    {
-      id: 4,
-      name: "David Thompson",
-      role: "Marketing Director",
-      avatar: "DT",
-      rating: 5,
-      review: "Incredible results! Our conversion rates improved by 300% after their optimization. Highly recommended!",
-      color: "from-orange-500 to-red-500"
-    },
-    {
-      id: 5,
-      name: "Lisa Park",
-      role: "Product Manager",
-      avatar: "LP",
-      rating: 5,
-      review: "The best investment we made this year. Their strategic approach and execution were flawless.",
-      color: "from-indigo-500 to-purple-500"
-    },
-    {
-      id: 6,
-      name: "James Wilson",
-      role: "Startup Founder",
-      avatar: "JW",
-      rating: 5,
-      review: "From concept to launch, they guided us every step. The final product exceeded all our expectations.",
-      color: "from-teal-500 to-blue-500"
-    },
-    {
-      id: 7,
-      name: "Amanda Foster",
-      role: "E-commerce Owner",
-      avatar: "AF",
-      rating: 5,
-      review: "My online sales tripled after their redesign. The user experience they created is absolutely brilliant.",
-      color: "from-pink-500 to-rose-500"
-    },
-    {
-      id: 8,
-      name: "Robert Kim",
-      role: "Tech Lead",
-      avatar: "RK",
-      rating: 5,
-      review: "Clean code, modern design, and exceptional performance. Everything we hoped for and more.",
-      color: "from-yellow-500 to-orange-500"
-    },
-    {
-      id: 9,
-      name: "Sophie Martinez",
-      role: "Brand Manager",
-      avatar: "SM",
-      rating: 5,
-      review: "They perfectly captured our brand essence and translated it into a stunning digital experience.",
-      color: "from-violet-500 to-purple-500"
-    },
-    
-  ]
+ 
 
   useGSAP(() => {
 
@@ -198,7 +116,7 @@ function Reviews() {
 
   }, { scope: containerRef })
 
-  const renderStars = (rating) => {
+  const renderStars = (rating:number) => {
     return Array.from({ length: 5 }, (_, index) => (
       <svg
         key={index}
@@ -239,7 +157,7 @@ function Reviews() {
           </h1>
           
           <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Don't just take our word for it. Here's what our amazing clients have to say about their experience working with us.
+            Don&apos;t just take our word for it. Here&apos;s what our amazing clients have to say about their experience working with us.
           </p>
         </div>
           {/* Reviews Grid */}
