@@ -3,8 +3,8 @@ import React from "react";
 
 type Props = {
   imageUrl?: string[];
-  heading: string[];
-  desciption: string[];
+  heading: string;
+  desciption: string;
   headingColor:string;
 };
 
@@ -18,26 +18,52 @@ function HoriScrollContent({
   ],
 }: Props) {
   return (
-    <div className="flex flex-col items-center justify-center w-screen h-full px-4 md:px-8">
+    <div className="flex flex-col items-center justify-start w-screen h-full ">
       {/* Block 1 */}
-      <div className="flex flex-col md:flex-row justify-center items-center gap-6 w-full">
+      <div className="flex flex-col md:flex-row justify-start items-center gap-6 w-full h-full px-2">
         <Image
           src={imageUrl[0]}
-          width={270}
-          height={270}
+          width={560}
+          height={520}
           alt="Feature"
           className="rounded-xl object-fit"
         />
-        <div className="text-center md:text-left space-y-4 max-w-2xl">
-          <h2 className={`text-2xl md:text-5xl font-black ${headingColor}`}>{heading[0]}</h2>
+        <div className="flex flex-col w-full items-start h-full py-4 justify-center text-center md:text-left space-y-4">
+          <div className="w-full text-justify">
+          <h2 className={`text-2xl md:text-5xl font-black ${headingColor}`}>{heading}</h2>
           <p className="text-base md:text-lg leading-relaxed text-gray-200">
-            {desciption[0]}
+            {desciption}
           </p>
+          </div>
+          <div className="relative -left-8 flex w-full justify-center gap-2">
+
+          <Image
+          src={imageUrl[1]}
+          width={280}
+          height={280}
+          alt="Feature"
+          className="rounded-xl object-cover "
+          />
+          <Image
+          src={imageUrl[2]}
+          width={280}
+          height={280}
+          alt="Feature"
+          className="rounded-xl object-cover"
+          />
+          <Image
+          src={imageUrl[3]}
+          width={280}
+          height={280}
+          alt="Feature"
+          className="rounded-xl object-cover"
+          />
+          </div>
         </div>
       </div>
 
       {/* Block 2 */}
-      <div className="flex flex-col md:flex-row-reverse justify-center items-center gap-6 w-full">
+      {/* <div className="flex flex-col md:flex-row-reverse justify-center items-center gap-6 w-full">
         <Image
           src={imageUrl[1]}
           width={270}
@@ -51,7 +77,7 @@ function HoriScrollContent({
             {desciption[1]}
           </p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
