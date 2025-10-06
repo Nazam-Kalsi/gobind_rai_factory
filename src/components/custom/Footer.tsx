@@ -4,7 +4,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <section className="relative z-[99] bg-yellow-300 dark:bg-violet-900 overflow-hidden rounded-3xl m-4">
+    <section className="h-[95vh] relative z-[99] bg-yellow-300 dark:bg-violet-900 overflow-hidden rounded-3xl m-4">
       {/* Background pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(120,119,198,0.1),transparent_70%)]"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(59,130,246,0.08),transparent_60%)]"></div>

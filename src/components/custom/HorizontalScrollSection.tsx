@@ -158,7 +158,7 @@ function HorizontalScrollSection() {
         <div ref={logoContainer} className="relative flex flex-col w-full h-full items-center px-2 sm:px-6">
           <Image
             ref={logoRef}
-            src="https://placehold.co/600x400"
+            src="/logo.png"
             width={150}
             height={150}
             alt="Logo"

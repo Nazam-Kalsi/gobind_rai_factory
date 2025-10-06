@@ -34,13 +34,13 @@ function Header() {
   return (
     <nav className="fixed w-full z-[999] px-8 ">      
       <div className="flex items-center justify-center">
-        <div>
+        <div >
           <Image
-          src={'https://placehold.co/40'}
+          src={'/logo.png'}
           alt='logo'
-          width={100}
-          height={100}
-          className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-125 group-hover:rotate-2 group-hover:brightness-110"
+          width={70}
+          height={70}
+          className="object-fit"
 
           />
         </div>
