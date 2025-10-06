@@ -139,7 +139,7 @@ function HeroSection() {
       }}>
       <div className="absolute top-0 h-[110vh] w-screen blur-sm bg-[url(/bg2.jpeg)] dark:bg-none bg-fixed bg-cover dark:opacity-0" />
   
-      {/* <div ref={coverRef} className="absolute inset-0 bg-red-900 dark:bg-black z-[19] pointer-events-none" />
+      <div ref={coverRef} className="absolute inset-0 bg-red-900 dark:bg-black z-[19] pointer-events-none" />
       <div
         ref={yellowDivRef}
         className="flex items-center justify-center absolute inset-0 bg-yellow-400 z-30 pointer-events-none bg-gradient-to-r dark:from-slate-900 dark:via-purple-900 dark:to-slate-900"
@@ -147,7 +147,7 @@ function HeroSection() {
           transform: 'skewY(12deg)',
           backfaceVisibility: 'hidden'
         }}
-      /> */}
+      />
 
       {/* Loader GIF */}
       <Image
@@ -167,7 +167,7 @@ function HeroSection() {
         }}>
         {/* Text */}
         <div className={` w-full max-w-2xl space-y-2 sm:space-y-4`}>
-          <span className={`bg-gradient-to-b from-black to-gray-500 bg-clip-text whitespace-pre-wrap text-transparent dark:from-white dark:to-slate-900/10 tracking-wide inline-block text-4xl sm:text-6xl lg:text-8xl font-black`}>
+          <span className={`bg-gradient-to-b from-black to-gray-500 bg-clip-text whitespace-pre-wrap text-transparent dark:from-white dark:to-slate-900/10 tracking-wide inline-block text-6xl sm:text-6xl lg:text-8xl font-black`}>
             Built for
           </span>
           &nbsp;
@@ -175,12 +175,12 @@ function HeroSection() {
             as="span"
             className={`p-0 text-4xl sm:text-6xl lg:text-8xl font-black text-yellow-500 `}
           > */}
-          <AnimatedGradientText className={`p-0 text-4xl sm:text-6xl lg:text-8xl font-black `}>
+          <AnimatedGradientText className={`p-0 text-6xl sm:text-6xl lg:text-8xl font-black `}>
             Farmers.
           </AnimatedGradientText>
           {/* </HyperText> */}
-          <p className="bg-gradient-to-b from-black to-gray-500 bg-clip-text whitespace-pre-wrap text-transparent dark:from-white dark:to-slate-900/10 text-3xl sm:text-5xl lg:text-8xl font-black tracking-wide">Crafted for</p>
-          <AnimatedGradientText className={`p-0 text-4xl sm:text-6xl lg:text-8xl font-black `} colorFrom='#3a24ff' colorTo='#1a0b44'>
+          <p className="bg-gradient-to-b from-black to-gray-500 bg-clip-text whitespace-pre-wrap text-transparent dark:from-white dark:to-slate-900/10 text-6xl sm:text-5xl lg:text-8xl font-black tracking-wide">Crafted for</p>
+          <AnimatedGradientText className={`p-0 text-6xl sm:text-6xl lg:text-8xl font-black `} colorFrom='#3a24ff' colorTo='#1a0b44'>
             Generations.
           </AnimatedGradientText>
         </div>
@@ -203,7 +203,7 @@ function HeroSection() {
         {/* Decorative img2 */}
         <Image
           ref={secondaryImageRef3}
-          className="absolute bottom-4 sm:-bottom-12 left-1/2 z-[-12] w-[120px] sm:w-[180px] lg:w-[180px] rounded-lg overflow-hidden shadow-[0px_0px_10px_0px_#84f580]"
+          className="absolute sm:-bottom-12 left-1/2 z-[-12] w-[120px] sm:w-[180px] lg:w-[180px] rounded-lg overflow-hidden shadow-[0px_0px_10px_0px_#84f580]"
           src="/green.jpg"
           width={200}
           height={200}
@@ -211,7 +211,7 @@ function HeroSection() {
         />
         <Image
           ref={secondaryImageRef2}
-          className="absolute bottom-4 sm:top-0 right-[6%] z-[-12] w-[120px] sm:w-[180px] lg:w-[180px] rounded-lg overflow-hidden shadow-[0px_0px_10px_0px_#fa7760]"
+          className="absolute sm:bottom-4 -top-12 sm:top-0 right-[6%] z-[-12] w-[120px] sm:w-[180px] lg:w-[180px] rounded-lg overflow-hidden shadow-[0px_0px_10px_0px_#fa7760]"
           src="/redclose.png"
           width={200}
           height={200}

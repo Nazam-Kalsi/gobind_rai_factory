@@ -35,7 +35,7 @@ function HoriScrollContent({
             {desciption}
           </p>
           </div>
-          <div className="relative -left-8 flex w-full justify-center gap-2">
+          <div className="hidden relative -left-8 sm:flex w-full justify-center gap-2">
 
           <Image
           src={imageUrl[1]}
@@ -61,23 +61,6 @@ function HoriScrollContent({
           </div>
         </div>
       </div>
-
-      {/* Block 2 */}
-      {/* <div className="flex flex-col md:flex-row-reverse justify-center items-center gap-6 w-full">
-        <Image
-          src={imageUrl[1]}
-          width={270}
-          height={270}
-          alt="Feature"
-          className="rounded-xl object-cover"
-        />
-        <div className="text-center md:text-left space-y-4 max-w-2xl">
-          <h2 className={`  text-2xl md:text-5xl font-black ${headingColor}`}>{heading[1]}</h2>
-          <p className="text-base md:text-lg leading-relaxed text-gray-200">
-            {desciption[1]}
-          </p>
-        </div>
-      </div> */}
     </div>
   );
 }

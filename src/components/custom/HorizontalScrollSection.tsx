@@ -21,34 +21,40 @@ function HorizontalScrollSection() {
   const horizontalContent = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    // Pin logo container
-    gsap.to(logoContainer.current, {
-      scrollTrigger: {
-        trigger: container.current,
-        pin: true,
-        pinSpacing: false,
-      },
+     gsap.ticker.lagSmoothing(500, 33);
+
+    // Basic GPU hinting
+    gsap.set("img, .line", { willChange: "transform, opacity" });
+
+    // ✅ Combine simpler triggers
+
+    // Logo pinning
+    ScrollTrigger.create({
+      trigger: container.current,
+      start: "top top",
+      end: "bottom top",
+      pin: logoContainer.current,
+      pinSpacing: false,
     });
 
-   gsap.to(container.current, {
-      backgroundColor: "#837de2", // target color
+    // Background transition (lighter trigger)
+    gsap.to(container.current, {
+      backgroundColor: "#837de2",
       ease: "none",
       scrollTrigger: {
         trigger: container.current,
-        start: "top 80%",   // when section hits middle of screen
-        end: "bottom center",  // until bottom hits middle
-        scrub: true,           // smooth scrubbing
+        start: "top 80%",
+        end: "bottom center",
+        scrub: true,
       },
-    });
-    // Tractor movement
-    gsap.to(tractorRef.current, {
-      x: "2700",
+    }); gsap.to(tractorRef.current, {
+      xPercent: 800, // relative move (less layout reflow)
       ease: "none",
       scrollTrigger: {
         trigger: container.current,
         start: "top bottom",
         end: "bottom top",
-        scrub: 1,
+        scrub: true,
       },
     });
 
@@ -64,44 +70,45 @@ function HorizontalScrollSection() {
         scrub: 1,
       },
     });
-
-    // Text line reveal
+ // Text line reveal — use fromTo with intersection guard
     const lines = textLinesRef.current?.querySelectorAll(".line");
-    if (lines) {
-      gsap.from(lines, {
-        opacity: 0,
-        y: 50,
-        stagger: 0.3,
-        ease: "power4.out",
-        scrollTrigger: {
-          trigger: textLinesRef.current,
-          start: "top 70%",
-          end: "bottom top",
-          scrub: 1,
-        },
-      });
+    if (lines?.length) {
+      gsap.fromTo(
+        lines,
+        { opacity: 0, y: 60 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.25,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: textLinesRef.current,
+            start: "top 80%",
+            end: "bottom 60%",
+            scrub: true,
+          },
+        }
+      );
     }
 
-    // Feature image animation
+    // Feature image appearance
     gsap.fromTo(
       featureImage.current,
-      { opacity: 0, scale: 0.1, zIndex: 50 },
+      { opacity: 0, scale: 0.2, zIndex: 50 },
       {
         opacity: 1,
         scale: 0.3,
-        ease: "power2.out",
+        ease: "power1.out",
         scrollTrigger: {
           trigger: container.current,
-          start: "middle top",
-          end: "bottom bottom",
-          scrub: 1,
-          immediateRender: false,
+          start: "center center",
+          end: "bottom top",
+          scrub: true,
         },
       }
     );
 
-    // Pin horizontal scroll section
-    gsap.to(newSection.current, {
+       gsap.to(newSection.current, {
       scrollTrigger: {
         trigger: newSection.current,
         start: "top top",
@@ -110,9 +117,7 @@ function HorizontalScrollSection() {
         pinSpacing: false,
       },
     });
-
-    // Horizontal scroll
-    const horizontalDistance =
+      const horizontalDistance =
       (horizontalContent.current?.scrollWidth || 0) - window.innerWidth;
 
     gsap.to(horizontalContent.current, {
@@ -125,6 +130,11 @@ function HorizontalScrollSection() {
         scrub: 1,
       },
     });
+
+
+
+    // Cleanup
+    return () => ScrollTrigger.getAll().forEach((t) => t.kill());
   }, { scope: container });
 
   return (
@@ -145,7 +155,7 @@ function HorizontalScrollSection() {
         />
 
         {/* Logo + Text */}
-        <div ref={logoContainer} className="relative flex flex-col items-center px-2 sm:px-6">
+        <div ref={logoContainer} className="relative flex flex-col w-full h-full items-center px-2 sm:px-6">
           <Image
             ref={logoRef}
             src="https://placehold.co/600x400"
@@ -158,14 +168,14 @@ function HorizontalScrollSection() {
 
           {/* Text reveal */}
           <div ref={textLinesRef} className="space-y-4 sm:space-y-6 text-center mt-6">
-            <p className="line text-3xl sm:text-5xl lg:text-7xl font-black uppercase leading-snug">
+            <p className="line text-5xl sm:text-5xl lg:text-7xl font-black uppercase ">
               Every <span className="text-yellow-300">weld</span>, every{" "}
               <span className="text-yellow-300">bolt</span>
             </p>
-            <p className="line text-3xl sm:text-5xl lg:text-7xl font-black uppercase leading-snug">
+            <p className="line text-5xl sm:text-5xl lg:text-7xl font-black uppercase ">
               proof that our work
             </p>
-            <p className="line text-3xl sm:text-5xl lg:text-7xl font-black uppercase leading-snug">
+            <p className="line text-5xl sm:text-5xl lg:text-7xl font-black uppercase ">
               <span className="text-yellow-300">delivers</span> where it truly{" "}
               <span className="text-yellow-300">matters</span>.
             </p>
