@@ -11,13 +11,13 @@ export const premiumProducts = [
     description: 'Designed to improve traction, steering control, and safety, they ensure smooth operation even on tough terrains.',
   },
   {
-    image: '/modification_a.JPG',
+    image: '/modification_a.jpg',
     title: 'Complete Modification',
     description:
       'Whether you need enhanced power, improved efficiency, or specialized attachments, we tailor each modification to your specific requirements.',
   },
   {
-    image: '/modification_b.JPG',
+    image: '/modification_b.jpg',
     title: 'Custom modification',
     description: 'From performance upgrades to custom attachments and aesthetic enhancements, we ensures you meets your needs.',
   },

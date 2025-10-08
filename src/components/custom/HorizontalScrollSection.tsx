@@ -232,7 +232,7 @@ function HorizontalScrollSection() {
               headingColor="text-red-900"
               heading='Premium Tractor Modification'
                 desciption='We specialize in advanced tractor modifications that boost both functionality and style. From performance upgrades to custom attachments and aesthetic enhancements, our expert team ensures every tractor meets modern farming needs. Each modification is engineered for durability, comfort, and efficiency—transforming your tractor into a powerful, reliable, and eye-catching machine.'
-                imageUrl={['c_a.jpg', 'modification_b.JPG', 'modification_c.JPG', 'modification_d.JPG']}  />
+                imageUrl={['c_a.jpg', 'modification_b.jpg', 'modification_c.JPG', 'modification_d.JPG']}  />
             </div>
 
             <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full flex items-center justify-center bg-gradient-to-br from-purple-500 via-violet-500 to-purple-500">
