@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -22,15 +22,15 @@ export default function ContactPage() {
     });
   };
 
-  const handleSubmit = () => {
-    if (formData.name && formData.email && formData.phone && formData.message) {
-      setIsSubmitted(true);
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setFormData({ name: '', email: '', phone: '', message: '' });
-      }, 3000);
-    }
-  };
+  // const handleSubmit = () => {
+  //   if (formData.name && formData.email && formData.phone && formData.message) {
+  //     setIsSubmitted(true);
+  //     setTimeout(() => {
+  //       setIsSubmitted(false);
+  //       setFormData({ name: '', email: '', phone: '', message: '' });
+  //     }, 3000);
+  //   }
+  // };
 
   return (
     <div className="rounded-[4rem] m-2 min-h-screen  py-12 px-4 sm:px-6 lg:px-8">
@@ -151,7 +151,7 @@ export default function ContactPage() {
                 </h2>
                 
                 <p className="mb-6 text-sm sm:text-base">
-                  Prefer to talk? Give us a call and we'll be happy to assist you.
+                  Prefer to talk? Give us a call and we&apos;ll be happy to assist you.
                 </p>
                 
                 <a

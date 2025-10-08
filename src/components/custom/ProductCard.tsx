@@ -5,19 +5,12 @@ interface ProductCardProps {
   image: string;
   title: string;
   description?: string;
-  buttonText?: string;
-  price?: string;
-  originalPrice?: string;
-  rating?: number;
-  category?: string;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
   image,
   title,
   description,
-  price,
-  originalPrice,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 

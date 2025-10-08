@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { ThemeProvider } from "@/components/ui/theme-provider"
 import { Header,Footer } from "@/components";
 
