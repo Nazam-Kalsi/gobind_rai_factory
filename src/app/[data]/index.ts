@@ -1,48 +1,48 @@
 export const premiumProducts = [
   {
-    image: '/u.png',
+    image: '/u.jpg',
     title: 'Mounted Umbrella',
     description:
       'Built with strong metal frames and durable materials, these canopies ensure long-lasting performance.',
   },
   {
-    image: '/weights.png',
+    image: '/weights.jpg',
     title: 'Front Weights',
     description: 'Designed to improve traction, steering control, and safety, they ensure smooth operation even on tough terrains.',
   },
   {
-    image: '/modification1.jpg',
+    image: '/modification_a.JPG',
     title: 'Complete Modification',
     description:
       'Whether you need enhanced power, improved efficiency, or specialized attachments, we tailor each modification to your specific requirements.',
   },
   {
-    image: '/modification2.jpg',
+    image: '/modification_b.JPG',
     title: 'Custom modification',
     description: 'From performance upgrades to custom attachments and aesthetic enhancements, we ensures you meets your needs.',
   },
   {
-    image: '/redclose.png',
+    image: '/redclose.jpg',
     title: 'Wheel Protectors',
     description: 'Our wheel protectors shield tractor tires from damage, ensuring long life and reliable performance.',
   },
   {
-  image: '/lm.png',
+  image: '/lm.jpg',
   title: 'Total Rebuild',
   description: 'From engine overhauls to body refinishing and electrical upgrades, every component is expertly renewed',
   },
   {
-    image: 's1.jpg',
+    image: 's_a.JPG',
     title: 'Our Tractor Lineup',
     description: 'Explore our latest line of high-performance tractors built to handle every farming challenge with ease.',
   },
   {
-    image: 'modification4.jpg',
+    image: 'modification_d.JPG',
     title: 'Precision Build',
     description: 'Built with precision for unmatched strength, performance, and long-lasting reliability.',
   },
   {
-    image: '/s2.jpg',
+    image: '/s_b.JPG',
     title: 'Feedback and Improvement',
     description: 'We value customer feedback to refine our services and deliver better solutions every day.',
     price: '$1,999',

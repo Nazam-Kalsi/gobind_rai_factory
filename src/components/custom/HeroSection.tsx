@@ -137,7 +137,7 @@ function HeroSection() {
         contain: 'layout style paint',
         willChange: 'auto'
       }}>
-      <div className="absolute top-0 h-[110vh] w-screen blur-sm bg-[url(/bg2.jpeg)] dark:bg-none bg-fixed bg-cover dark:opacity-0" />
+      <div className="absolute top-0 h-[110vh] w-screen blur-sm bg-[url(/bg2.jpg)] dark:bg-none bg-fixed bg-cover dark:opacity-0" />
   
       <div ref={coverRef} className="absolute inset-0 bg-red-900 dark:bg-black z-[19] pointer-events-none" />
       <div
@@ -212,7 +212,7 @@ function HeroSection() {
         <Image
           ref={secondaryImageRef2}
           className="absolute sm:bottom-4 -top-12 sm:top-0 right-[6%] z-[-12] w-[120px] sm:w-[180px] lg:w-[180px] rounded-lg overflow-hidden shadow-[0px_0px_10px_0px_#fa7760]"
-          src="/redclose.png"
+          src="/redclose.jpg"
           width={200}
           height={200}
           alt="Decorative"

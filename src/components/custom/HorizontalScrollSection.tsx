@@ -185,7 +185,7 @@ function HorizontalScrollSection() {
           <Image
             ref={featureImage}
             className="fixed z-50 left-1/2 -translate-x-1/2 w-[200px] sm:w-[300px] lg:w-[500px] rounded-2xl overflow-hidden"
-            src="/redclose.png"
+            src="/redclose.jpg"
             width={800}
             height={800}
             alt="Feature"
@@ -214,7 +214,7 @@ function HorizontalScrollSection() {
                 desciption=
                   "Engineered for strength and reliability, our front tractor weights keep your machine firmly grounded, improving balance, grip, and control. Perfect for handling heavy equipment and ensuring safe, efficient performance across all terrains.Our robust front tractor weights provide stability, prevent lifting, and enhance traction. Designed for tough farming conditions, they ensure safer handling and maximum efficiency when operating heavy implements on the field."
                 
-                imageUrl={['/img2.jpg', '/weight.jpg','/weights.png','/redweights.png']}
+                imageUrl={['/img2.jpg', '/weight.jpg','/weights.jpg','/redweights.jpg']}
               />
             </div>
             
@@ -224,7 +224,7 @@ function HorizontalScrollSection() {
                heading="Tractor Umbrellas"
                 desciption="Our factory manufactures high-quality tractor umbrellas designed to provide maximum protection from sun, rain, and dust. Built with strong metal frames and durable materials, these canopies ensure long-lasting performance. Perfectly suited for all farming conditions, they enhance operator comfort and safety while maintaining a sleek, professional look for tractors."
                 
-                imageUrl={['/2red.png', '/u.png','/closeupumbrella.png','/greenumbrella.png']} />
+                imageUrl={['/2red.jpg', '/u.jpg','/closeupumbrella.jpg','/greenumbrella.jpg']} />
             </div>
 
             <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full flex items-center justify-center bg-gradient-to-tl from-red-400 via-red-500 to-orange-100">
@@ -232,7 +232,7 @@ function HorizontalScrollSection() {
               headingColor="text-red-900"
               heading='Premium Tractor Modification'
                 desciption='We specialize in advanced tractor modifications that boost both functionality and style. From performance upgrades to custom attachments and aesthetic enhancements, our expert team ensures every tractor meets modern farming needs. Each modification is engineered for durability, comfort, and efficiency—transforming your tractor into a powerful, reliable, and eye-catching machine.'
-                imageUrl={['c1.png', 'modification2.jpg', 'modification3.jpg', 'modification4.jpg']}  />
+                imageUrl={['c_a.jpg', 'modification_b.JPG', 'modification_c.JPG', 'modification_d.JPG']}  />
             </div>
 
             <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full flex items-center justify-center bg-gradient-to-br from-purple-500 via-violet-500 to-purple-500">
@@ -240,7 +240,7 @@ function HorizontalScrollSection() {
               headingColor="text-purple-900"
               heading='Premium Services'
                 desciption='Our premium tractor service ensures your machine performs at its best in every season. With expert technicians, genuine parts, and advanced diagnostic tools, we provide complete maintenance and repair solutions. Experience smooth operation, extended lifespan, and superior efficiency with our trusted, high-quality service tailored to meet every farmer’s needs.'
-                imageUrl={['greensf.png', '/s3.jpg','/s2.jpg','/s1.jpg']}  />
+                imageUrl={['greensf.jpg', '/s_c.JPG','/s_b.JPG','/s_a.JPG']}  />
             </div>
 
             <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full flex items-center justify-center bg-gradient-to-tl to-orange-400 from-yellow-400 px-8">
@@ -248,7 +248,7 @@ function HorizontalScrollSection() {
                headingColor="text-orange-900"
                heading='Innovative Farming Solutions'
                 desciption='We deliver cutting-edge tractor solutions designed to simplify and modernize farming. Our range includes efficient power systems, ergonomic designs, and advanced attachments that boost productivity in the field. Combining technology with reliability, our tractors help farmers achieve more with less effort, ensuring performance, comfort, and sustainability in every operation.'
-                imageUrl={['/lm.png', '/l1.jpg','/l3.jpg','/l2.jpg']}  />
+                imageUrl={['/lm.jpg', '/l_a.JPG','/l_c.JPG','/l_b.JPG']}  />
             </div>
           </div>
         </div>

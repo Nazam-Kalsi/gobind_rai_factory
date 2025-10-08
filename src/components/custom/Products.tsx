@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 function Products() {
   return (
-    <section className="relative z-[9] w-full rounded-t-[4rem] dark:bg-[url(/grad1.jpeg)]  bg-fixed bg-cover bg-gradient-to-tr from-red-500 to-red-800">
+    <section className="relative z-[9] w-full rounded-t-[4rem] dark:bg-[url(/grad1.jpg)]  bg-fixed bg-cover bg-gradient-to-tr from-red-500 to-red-800">
       <p
         className="text-center font-black text-6xl p-8 uppercase bg-clip-text text-transparent bg-gradient-to-bl from-cyan-600 via-lime-50 to-amber-500">
         Our Products

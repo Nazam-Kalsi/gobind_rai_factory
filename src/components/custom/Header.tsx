@@ -84,7 +84,7 @@ function Header() {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <p aria-label="Theme" className={cn(buttonVariants({ variant: 'ghost', size: 'icon' }), 'size-12 rounded-full cusror-pointer')}>
-                  <AnimatedThemeToggler/>
+                  <AnimatedThemeToggler defaultTheme='light'/>
                     </p>
                 </TooltipTrigger>
                 <TooltipContent>

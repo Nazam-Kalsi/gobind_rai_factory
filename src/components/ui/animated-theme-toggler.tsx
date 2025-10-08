@@ -7,26 +7,28 @@ import { cn } from "@/lib/utils";
 
 type Props = {
   className?: string;
+  defaultTheme?: "light" | "dark";
 };
 
-export const AnimatedThemeToggler = ({ className }: Props) => {
+export const AnimatedThemeToggler = ({ className,defaultTheme }: Props) => {
   const [isDark, setIsDark] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
+    if (defaultTheme=='dark') {
     const updateTheme = () => {
       setIsDark(document.documentElement.classList.contains("dark"));
-    };
-
+    };    
     updateTheme();
-
+    
     const observer = new MutationObserver(updateTheme);
     observer.observe(document.documentElement, {
       attributes: true,
       attributeFilter: ["class"],
     });
-
+    
     return () => observer.disconnect();
+  }
   }, []);
 
   const toggleTheme = useCallback(async () => {
