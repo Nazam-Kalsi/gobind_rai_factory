@@ -3,7 +3,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Dock, DockIcon } from '@/components/ui/dock';
-import { BadgeInfo, Contact2Icon, Facebook, Home, Instagram, Tractor } from 'lucide-react';
+import { Contact2Icon, Facebook, Home, Instagram, Tractor } from 'lucide-react';
 import Link from 'next/link';
 import { AnimatedThemeToggler } from '../ui/animated-theme-toggler';
 import Image from 'next/image';

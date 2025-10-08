@@ -15,7 +15,9 @@ export default function ContactPage() {
   const dividerRef = useRef(null);
   const phoneRef = useRef(null);
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
