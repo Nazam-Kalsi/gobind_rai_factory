@@ -184,7 +184,7 @@ function HorizontalScrollSection() {
           {/* Feature image takeover */}
           <Image
             ref={featureImage}
-            className="fixed z-50 left-1/2 -translate-x-1/2 w-[200px] sm:w-[300px] lg:w-[500px] rounded-2xl overflow-hidden"
+            className="fixed z-50 left-1/2 top-20 -translate-x-1/2 w-[200px] sm:w-[300px] lg:w-[500px] rounded-2xl overflow-hidden"
             src="/redclose.jpg"
             width={800}
             height={800}
@@ -221,8 +221,8 @@ function HorizontalScrollSection() {
             <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full flex items-center justify-center  bg-gradient-to-l from-green-400 to-green-600">
               <HoriScrollContent 
                headingColor="text-green-900"
-               heading="Tractor Umbrellas"
-                desciption="Our factory manufactures high-quality tractor umbrellas designed to provide maximum protection from sun, rain, and dust. Built with strong metal frames and durable materials, these canopies ensure long-lasting performance. Perfectly suited for all farming conditions, they enhance operator comfort and safety while maintaining a sleek, professional look for tractors."
+               heading="Tractor Mounted hoods"
+                desciption="Our factory manufactures high-quality tractor hoods designed to provide maximum protection from sun, rain, and dust. Built with strong metal frames and durable materials, these canopies ensure long-lasting performance. Perfectly suited for all farming conditions, they enhance operator comfort and safety while maintaining a sleek, professional look for tractors."
                 
                 imageUrl={['/2red.jpg', '/u.jpg','/closeupumbrella.jpg','/greenumbrella.jpg']} />
             </div>

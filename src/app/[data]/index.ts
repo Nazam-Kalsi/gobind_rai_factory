@@ -1,7 +1,7 @@
 export const premiumProducts = [
   {
     image: '/u.jpg',
-    title: 'Mounted Umbrella',
+    title: 'Mounted Tractor Hood',
     description:
       'Built with strong metal frames and durable materials, these canopies ensure long-lasting performance.',
   },

@@ -16,7 +16,7 @@ function Footer() {
             <div className="space-y-4 sm:space-y-6">
               <Image
                 className="mx-auto sm:mx-0 object-cover"
-                src="https://placehold.co/60"
+                src="/logo.png"
                 width={100}
                 height={100}
                 alt="Logo"
@@ -40,10 +40,10 @@ function Footer() {
               </h4>
               <ul className="space-y-2 sm:space-y-3 text-center sm:text-left">
                 {[
-                  { name: "Tractor", href: "#" },
-                  { name: "Harvester", href: "#" },
-                  { name: "Plough", href: "#" },
-                  { name: "Seeder", href: "#" },
+                  { name: "Weights", href: "#" },
+                  { name: "Tractor hood", href: "#" },
+                  { name: "Mud guard", href: "#" },
+                  
                 ].map((item, index) => (
                   <li key={index}>
                     <Link
@@ -80,15 +80,15 @@ function Footer() {
               </h4>
               <ul className="space-y-2 sm:space-y-3 text-center sm:text-left">
                 <li className="group hover:text-red-500 transition-all hover:scale-105 duration-400 flex items-center justify-start">
-                  1234567890
+                  88729-06032
                 </li>
                 <li className="group hover:text-red-500 transition-all hover:scale-105 duration-400 flex items-center justify-start">
-                  email.com
+                  99146-46032
                 </li>
 
                 {[
-                  { name: "Instagram", href: "#" },
-                  { name: "Facebook", href: "#" },
+                  { name: "Instagram", href: "https://www.instagram.com/gobind_rai032/" },
+                  { name: "Facebook", href: "https://www.facebook.com/people/gobind_rai032/100070850617647/" },
                 ].map((item, index) => (
                   <li key={index}>
                     <Link

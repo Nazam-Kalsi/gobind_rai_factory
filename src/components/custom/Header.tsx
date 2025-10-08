@@ -34,7 +34,7 @@ function Header() {
   return (
     <nav className="fixed w-full z-[999] px-8 ">      
       <div className="flex items-center justify-center">
-        <div >
+        <div className='sm:block hidden' >
           <Image
           src={'/logo.png'}
           alt='logo'

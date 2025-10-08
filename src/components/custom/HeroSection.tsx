@@ -193,17 +193,17 @@ function HeroSection() {
         {/* Decorative img1 */}
         <Image
           ref={secondaryImageRef1}
-          className="absolute top-4 sm:top-[15%] left-4 sm:left-[35%] z-[-12] w-[120px] sm:w-[180px] lg:w-[150px] rounded-lg overflow-hidden shadow-[0px_0px_10px_0px_#809ff5]"
+          className="absolute top-28 sm:top-[15%] left-4 sm:left-[35%] z-[-12] sm:w-[180px] lg:w-[150px] rounded-lg overflow-hidden shadow-[0px_0px_10px_0px_#809ff5]"
           src="/img2.jpg"
           width={200}
-          height={400}
+          height={200}
           alt="Decorative"
         />
 
         {/* Decorative img2 */}
         <Image
           ref={secondaryImageRef3}
-          className="absolute sm:-bottom-12 left-1/2 z-[-12] w-[120px] sm:w-[180px] lg:w-[180px] rounded-lg overflow-hidden shadow-[0px_0px_10px_0px_#84f580]"
+          className="absolute object-cover sm:-bottom-12 -bottom-32 left-1/2 z-[-12]  sm:w-[180px] lg:w-[180px] rounded-lg overflow-hidden shadow-[0px_0px_10px_0px_#84f580]"
           src="/green.jpg"
           width={200}
           height={200}
@@ -211,7 +211,7 @@ function HeroSection() {
         />
         <Image
           ref={secondaryImageRef2}
-          className="absolute sm:bottom-4 -top-12 sm:top-0 right-[6%] z-[-12] w-[120px] sm:w-[180px] lg:w-[180px] rounded-lg overflow-hidden shadow-[0px_0px_10px_0px_#fa7760]"
+          className="absolute sm:bottom-4 -top-32 sm:top-0 right-[6%] z-[-12]  sm:w-[180px] lg:w-[180px] rounded-lg overflow-hidden shadow-[0px_0px_10px_0px_#fa7760]"
           src="/redclose.jpg"
           width={200}
           height={200}
