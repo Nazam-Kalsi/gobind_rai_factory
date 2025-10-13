@@ -39,7 +39,7 @@ function HorizontalScrollSection() {
 
     // Background transition (lighter trigger)
     gsap.to(container.current, {
-      backgroundColor: "#837de2",
+      backgroundColor: "#00A300",
       ease: "none",
       scrollTrigger: {
         trigger: container.current,
@@ -167,17 +167,17 @@ function HorizontalScrollSection() {
           />
 
           {/* Text reveal */}
-          <div ref={textLinesRef} className="space-y-4 sm:space-y-6 text-center mt-6">
-            <p className="line text-5xl sm:text-5xl lg:text-7xl font-black uppercase ">
-              Every <span className="text-yellow-300">weld</span>, every{" "}
-              <span className="text-yellow-300">bolt</span>
+          <div ref={textLinesRef} className="space-y-4 sm:space-y-6 text-center mt-6 text-shadow-sm text-shadow-white dark:text-shadow-black"> 
+            <p className="line text-5xl sm:text-5xl lg:text-7xl font-black uppercase text-shadow-sm text-shadow-white dark:text-shadow-black">
+              Every <span className="text-green-800 text-shadow-sm text-shadow-amber-100">weld</span>, every{" "}
+              <span className="text-green-800 text-shadow-sm text-shadow-amber-100">bolt</span>
             </p>
             <p className="line text-5xl sm:text-5xl lg:text-7xl font-black uppercase ">
               proof that our work
             </p>
             <p className="line text-5xl sm:text-5xl lg:text-7xl font-black uppercase ">
-              <span className="text-yellow-300">delivers</span> where it truly{" "}
-              <span className="text-yellow-300">matters</span>.
+              <span className="text-green-800 text-shadow-sm text-shadow-amber-100">delivers</span> where it truly{" "}
+              <span className="text-green-800 text-shadow-sm text-shadow-amber-100">matters</span>.
             </p>
           </div>
 
@@ -235,17 +235,17 @@ function HorizontalScrollSection() {
                 imageUrl={['c_a.jpg', 'modification_b.jpg', 'modification_c.JPG', 'modification_d.JPG']}  />
             </div>
 
-            <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full flex items-center justify-center bg-gradient-to-br from-purple-500 via-violet-500 to-purple-500">
+            <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full flex items-center justify-center bg-gradient-to-tr from-blue-700 via-blue-400 to-violet-400">
               <HoriScrollContent 
-              headingColor="text-purple-900"
+              headingColor="text-blue-900"
               heading='Premium Services'
                 desciption='Our premium tractor service ensures your machine performs at its best in every season. With expert technicians, genuine parts, and advanced diagnostic tools, we provide complete maintenance and repair solutions. Experience smooth operation, extended lifespan, and superior efficiency with our trusted, high-quality service tailored to meet every farmer’s needs.'
                 imageUrl={['greensf.jpg', '/s_c.JPG','/s_b.JPG','/s_a.JPG']}  />
             </div>
 
-            <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full flex items-center justify-center bg-gradient-to-tl to-orange-400 from-yellow-400 px-8">
+            <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full flex items-center justify-center  bg-gradient-to-l from-green-400 to-green-600 px-8">
                <HoriScrollContent 
-               headingColor="text-orange-900"
+               headingColor="text-green-900"
                heading='Innovative Farming Solutions'
                 desciption='We deliver cutting-edge tractor solutions designed to simplify and modernize farming. Our range includes efficient power systems, ergonomic designs, and advanced attachments that boost productivity in the field. Combining technology with reliability, our tractors help farmers achieve more with less effort, ensuring performance, comfort, and sustainability in every operation.'
                 imageUrl={['/lm.jpg', '/l_a.JPG','/l_c.JPG','/l_b.JPG']}  />

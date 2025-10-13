@@ -30,7 +30,7 @@ function HoriScrollContent({
         />
         <div className="flex flex-col w-full items-start h-full py-4 justify-center text-center md:text-left space-y-4">
           <div className="w-full text-justify">
-          <h2 className={`text-2xl md:text-5xl font-black ${headingColor}`}>{heading}</h2>
+          <h2 className={`text-2xl md:text-5xl font-black ${headingColor} text-shadow-sm text-shadow-white dark:text-shadow-black`}>{heading}</h2>
           <p className="text-base md:text-lg leading-relaxed text-gray-200">
             {desciption}
           </p>

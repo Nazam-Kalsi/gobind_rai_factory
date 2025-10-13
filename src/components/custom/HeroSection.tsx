@@ -166,11 +166,11 @@ function HeroSection() {
           backfaceVisibility: 'hidden'
         }}>
         {/* Text */}
-        <div className={` w-full max-w-2xl space-y-2 sm:space-y-4`}>
+        <div className={`flex flex-col items-center justify-center w-1/2 max-w-2xl space-y-2 sm:space-y-4`}>
           <span className={`bg-gradient-to-b from-black to-gray-500 bg-clip-text whitespace-pre-wrap text-transparent dark:from-white dark:to-slate-900/10 tracking-wide inline-block text-6xl sm:text-6xl lg:text-8xl font-black`}>
             Built for
           </span>
-          &nbsp;
+          
           {/* <HyperText
             as="span"
             className={`p-0 text-4xl sm:text-6xl lg:text-8xl font-black text-yellow-500 `}
@@ -186,37 +186,39 @@ function HeroSection() {
         </div>
 
         {/* Main image */}
-        <div className="relative w-[450px] sm:w-[300px] lg:w-[800px] mt-8 lg:mt-0 lg:absolute lg:right-0 z-[-2]">
+        <div className=" relative min-w-1/2 sm:w-[300px] lg:w-[800px] mt-8 lg:mt-0  z-[-2]">
           <Image className="dark:drop-shadow-[0px_0px_10px_#f580804b] " src="/png1.png" width={1000} height={1000} alt="Main Visual" />
         </div>
 
         {/* Decorative img1 */}
+        <div className=' flex gap-2 absolute right-0 w-1/2  bottom-0 items-center justify-around '>
         <Image
           ref={secondaryImageRef1}
-          className="absolute top-28 sm:top-[15%] left-4 sm:left-[35%] z-[-12] sm:w-[180px] lg:w-[150px] rounded-lg overflow-hidden shadow-[0px_0px_10px_0px_#809ff5]"
+          className=" rounded-lg overflow-hidden shadow-[0px_0px_10px_0px_#809ff5] lg:block hidden "
           src="/img2.jpg"
-          width={200}
-          height={200}
+          width={100}
+          height={100}
           alt="Decorative"
         />
 
         {/* Decorative img2 */}
         <Image
           ref={secondaryImageRef3}
-          className="absolute object-cover sm:-bottom-12 -bottom-32 left-1/2 z-[-12]  sm:w-[180px] lg:w-[180px] rounded-lg overflow-hidden shadow-[0px_0px_10px_0px_#84f580]"
+          className=" rounded-lg overflow-hidden shadow-[0px_0px_10px_0px_#84f580]  lg:block hidden"
           src="/green.jpg"
-          width={200}
-          height={200}
+          width={100}
+          height={100}
           alt="Decorative"
         />
         <Image
           ref={secondaryImageRef2}
-          className="absolute sm:bottom-4 -top-32 sm:top-0 right-[6%] z-[-12]  sm:w-[180px] lg:w-[180px] rounded-lg overflow-hidden shadow-[0px_0px_10px_0px_#fa7760]"
+          className="rounded-lg overflow-hidden shadow-[0px_0px_10px_0px_#fa7760] hidden lg:block"
           src="/redclose.jpg"
-          width={200}
-          height={200}
+          width={100}
+          height={100}
           alt="Decorative"
         />
+        </div>
       </section>
     </section>
     // </WavyBackground>
