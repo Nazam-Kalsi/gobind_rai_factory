@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import HoriScrollContent from "./HoriScrollContent";
+import { AnimatedGradientText } from "../ui/animated-gradient-text";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -39,7 +40,7 @@ function HorizontalScrollSection() {
 
     // Background transition (lighter trigger)
     gsap.to(container.current, {
-      backgroundColor: "#00A300",
+      backgroundColor: "#004700",
       ease: "none",
       scrollTrigger: {
         trigger: container.current,
@@ -167,18 +168,16 @@ function HorizontalScrollSection() {
           />
 
           {/* Text reveal */}
-          <div ref={textLinesRef} className="space-y-4 sm:space-y-6 text-center mt-6 text-shadow-sm text-shadow-white dark:text-shadow-black"> 
-            <p className="line text-5xl sm:text-5xl lg:text-7xl font-black uppercase text-shadow-sm text-shadow-white dark:text-shadow-black">
-              Every <span className="text-green-800 text-shadow-sm text-shadow-amber-100">weld</span>, every{" "}
-              <span className="text-green-800 text-shadow-sm text-shadow-amber-100">bolt</span>
+          <div ref={textLinesRef} className="h-[80vh] flex items-center space-y-4 sm:space-y-6 text-center mt-6 text-shadow-sm "> 
+
+            <p className="line text-5xl sm:text-5xl lg:text-7xl font-black uppercase text-shadow-sm ">
+              Every type of&nbsp;
+              <AnimatedGradientText className={`p-0 text-5xl sm:text-5xl lg:text-7xl font-black `}>
+               tractor</AnimatedGradientText>&nbsp; 
+
+                accessory avaliable here
             </p>
-            <p className="line text-5xl sm:text-5xl lg:text-7xl font-black uppercase ">
-              proof that our work
-            </p>
-            <p className="line text-5xl sm:text-5xl lg:text-7xl font-black uppercase ">
-              <span className="text-green-800 text-shadow-sm text-shadow-amber-100">delivers</span> where it truly{" "}
-              <span className="text-green-800 text-shadow-sm text-shadow-amber-100">matters</span>.
-            </p>
+              
           </div>
 
           {/* Feature image takeover */}

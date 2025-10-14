@@ -137,7 +137,7 @@ function HeroSection() {
         contain: 'layout style paint',
         willChange: 'auto'
       }}>
-      <div className="absolute top-0 h-[110vh] w-screen blur-sm bg-[url(/bg2.jpg)] dark:bg-none bg-fixed bg-cover dark:opacity-0" />
+      <div className="absolute top-0 h-[110vh] w-screen blur-sm bg-[url(/bg1.jpg)] dark:bg-none bg-fixed bg-cover dark:opacity-0" />
   
       <div ref={coverRef} className="absolute inset-0 bg-red-900 dark:bg-black z-[19] pointer-events-none" />
       <div
@@ -159,6 +159,9 @@ function HeroSection() {
       />
 
       {/* MAIN CONTENT */}
+      <section className='w-full flex flex-col items-center justify-center z-10 h-full'>
+         {/* <p className='font-bold text-xl'>Every type of tractor accessory avaliable</p> */}
+      
       <section
         ref={mainDivRef}
         className="relative px-2 sm:px-6 flex flex-col lg:flex-row justify-center lg:justify-start items-center text-center lg:text-left w-full font-bold z-10"
@@ -166,7 +169,7 @@ function HeroSection() {
           backfaceVisibility: 'hidden'
         }}>
         {/* Text */}
-        <div className={`flex flex-col items-center justify-center w-1/2 max-w-2xl space-y-2 sm:space-y-4`}>
+        <div className={`flex flex-col items-center justify-center sm:w-1/2 w-full space-y-2 sm:space-y-4`}>
           <span className={`bg-gradient-to-b from-black to-gray-500 bg-clip-text whitespace-pre-wrap text-transparent dark:from-white dark:to-slate-900/10 tracking-wide inline-block text-6xl sm:text-6xl lg:text-8xl font-black`}>
             Built for
           </span>
@@ -180,7 +183,7 @@ function HeroSection() {
           </AnimatedGradientText>
           {/* </HyperText> */}
           <p className="bg-gradient-to-b from-black to-gray-500 bg-clip-text whitespace-pre-wrap text-transparent dark:from-white dark:to-slate-900/10 text-6xl sm:text-5xl lg:text-8xl font-black tracking-wide">Crafted for</p>
-          <AnimatedGradientText className={`p-0 text-6xl sm:text-6xl lg:text-8xl font-black `} colorFrom='#3a24ff' colorTo='#1a0b44'>
+          <AnimatedGradientText className={`p-0 text-6xl sm:text-6xl lg:text-8xl font-black `} >
             Generations.
           </AnimatedGradientText>
         </div>
@@ -204,7 +207,7 @@ function HeroSection() {
         {/* Decorative img2 */}
         <Image
           ref={secondaryImageRef3}
-          className=" rounded-lg overflow-hidden shadow-[0px_0px_10px_0px_#84f580]  lg:block hidden"
+          className=" rounded-lg overflow-hidden shadow-[0px_0px_10px_0px_#84f580]  lg:block hidden "
           src="/green.jpg"
           width={100}
           height={100}
@@ -219,6 +222,8 @@ function HeroSection() {
           alt="Decorative"
         />
         </div>
+      </section>
+
       </section>
     </section>
     // </WavyBackground>
