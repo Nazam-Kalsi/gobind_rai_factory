@@ -15,7 +15,7 @@ function Footer() {
           <div className="flex-1 max-w-lg text-center sm:text-left">
             <div className="space-y-4 sm:space-y-6">
               <Image
-                className="mx-auto sm:mx-0 object-cover h-auto w-auto"
+                className="mx-auto sm:mx-0 object-cover"
                 src="/logo.png"
                 width={100}
                 height={100}

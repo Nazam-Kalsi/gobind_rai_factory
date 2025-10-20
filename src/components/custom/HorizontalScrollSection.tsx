@@ -245,7 +245,7 @@ function HorizontalScrollSection() {
             <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full flex items-center justify-center  bg-gradient-to-l from-green-400 to-green-600 px-8">
                <HoriScrollContent 
                headingColor="text-green-900"
-               heading='Innovative Farming Solutions'
+               heading='Agri-Tech Farming'
                 desciption='We deliver cutting-edge tractor solutions designed to simplify and modernize farming. Our range includes efficient power systems, ergonomic designs, and advanced attachments that boost productivity in the field. Combining technology with reliability, our tractors help farmers achieve more with less effort, ensuring performance, comfort, and sustainability in every operation.'
                 imageUrl={['/lm.jpg', '/l_a.JPG','/l_c.JPG','/l_b.JPG']}  />
             </div>

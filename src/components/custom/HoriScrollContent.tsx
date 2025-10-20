@@ -18,24 +18,27 @@ function HoriScrollContent({
   ],
 }: Props) {
   return (
-    <div className="flex flex-col items-center justify-start w-screen h-full ">
+    <div className="flex flex-col items-center justify-start w-screen h-full  ">
       {/* Block 1 */}
-      <div className="flex flex-col md:flex-row justify-start items-center gap-6 w-full h-full px-2">
+      <div className="flex flex-col lg:flex-row justify-start  items-center gap-6  h-1/2 lg:w-full lg:h-full px-2">
+      <div className='w-1/2'>
+
         <Image
           src={imageUrl[0]}
           width={560}
           height={520}
           alt="Feature"
           className="rounded-xl object-fit"
-        />
-        <div className="flex flex-col w-full items-start h-full py-4 justify-center text-center md:text-left space-y-4">
+          />
+          </div>
+        <div className="flex flex-col  w-full items-start h-full py-4 justify-center text-center md:text-left space-y-4">
           <div className="w-full text-justify">
-          <h2 className={`text-2xl md:text-5xl font-black ${headingColor} text-shadow-sm text-shadow-white dark:text-shadow-black`}>{heading}</h2>
+          <h2 className={`text-2xl md:text-5xl w-full text-start font-black ${headingColor} text-shadow-sm text-shadow-white dark:text-shadow-black`}>{heading}</h2>
           <p className="text-base md:text-lg leading-relaxed text-gray-200">
             {desciption}
           </p>
           </div>
-          <div className="hidden relative -left-8 sm:flex w-full justify-center gap-2">
+          <div className="hidden relative -left-8 lg:flex w-full justify-center gap-2">
 
           <Image
           src={imageUrl[1]}
@@ -56,7 +59,7 @@ function HoriScrollContent({
           width={280}
           height={280}
           alt="Feature"
-          className="rounded-xl object-cover"
+          className="rounded-xl object-cover hidden xl:block "
           />
           </div>
         </div>
