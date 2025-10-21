@@ -1,33 +1,33 @@
 export const premiumProducts = [
   {
-    image: '/u.jpg',
+    image: 'u.jpg',
     title: 'Mounted Tractor Hood',
     description:
       'Built with strong metal frames and durable materials, these canopies ensure long-lasting performance.',
   },
   {
-    image: '/weights.jpg',
+    image: 'weights.jpg',
     title: 'Front Weights',
     description: 'Designed to improve traction, steering control, and safety, they ensure smooth operation even on tough terrains.',
   },
   {
-    image: '/modification_a.jpg',
+    image: 'modification_a.jpg',
     title: 'Complete Modification',
     description:
       'Whether you need enhanced power, improved efficiency, or specialized attachments, we tailor each modification to your specific requirements.',
   },
   {
-    image: '/modification_b.jpg',
+    image: 'modification_b.jpg',
     title: 'Custom modification',
     description: 'From performance upgrades to custom attachments and aesthetic enhancements, we ensures you meets your needs.',
   },
   {
-    image: '/redclose.jpg',
+    image: 'redclose.jpg',
     title: 'Wheel Protectors',
     description: 'Our wheel protectors shield tractor tires from damage, ensuring long life and reliable performance.',
   },
   {
-  image: '/lm.jpg',
+  image: 'lm.jpg',
   title: 'Total Rebuild',
   description: 'From engine overhauls to body refinishing and electrical upgrades, every component is expertly renewed',
   },
@@ -42,7 +42,7 @@ export const premiumProducts = [
     description: 'Built with precision for unmatched strength, performance, and long-lasting reliability.',
   },
   {
-    image: '/s_b.JPG',
+    image: 's_b.JPG',
     title: 'Feedback and Improvement',
     description: 'We value customer feedback to refine our services and deliver better solutions every day.',
     price: '$1,999',

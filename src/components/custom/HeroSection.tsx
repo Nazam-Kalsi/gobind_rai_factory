@@ -152,7 +152,7 @@ function HeroSection() {
       {/* Loader GIF */}
       <Image
         className="absolute top-1/2 left-1/2 z-[99] fade-in-out"
-        src="/tractor.gif"
+        src="tractor.gif"
         width={60}
         height={60}
         alt="Wait"
@@ -198,7 +198,7 @@ function HeroSection() {
         <Image
           ref={secondaryImageRef1}
           className=" rounded-lg overflow-hidden shadow-[0px_0px_10px_0px_#809ff5] lg:block hidden "
-          src="/img2.jpg"
+          src="img2.jpg"
           width={100}
           height={100}
           alt="Decorative"
@@ -208,7 +208,7 @@ function HeroSection() {
         <Image
           ref={secondaryImageRef3}
           className=" rounded-lg overflow-hidden shadow-[0px_0px_10px_0px_#84f580]  lg:block hidden "
-          src="/green.jpg"
+          src="green.jpg"
           width={100}
           height={100}
           alt="Decorative"
@@ -216,7 +216,7 @@ function HeroSection() {
         <Image
           ref={secondaryImageRef2}
           className="rounded-lg overflow-hidden shadow-[0px_0px_10px_0px_#fa7760] hidden lg:block"
-          src="/redclose.jpg"
+          src="redclose.jpg"
           width={100}
           height={100}
           alt="Decorative"

@@ -49,7 +49,7 @@ function Header() {
       <div className="flex items-center justify-center">
         <div className='sm:block hidden ' >
           <Image
-          src={'/logo.png'}
+          src={'logo.png'}
           alt='logo'
           width={70}
           height={70}

@@ -149,7 +149,7 @@ function HorizontalScrollSection() {
         <Image
           ref={tractorRef}
           className="absolute left-2 top-4 z-10 w-[80px] sm:w-[120px] lg:w-[150px]"
-          src="/tractor.gif"
+          src="tractor.gif"
           width={150}
           height={150}
           alt="Tractor"
@@ -159,7 +159,7 @@ function HorizontalScrollSection() {
         <div ref={logoContainer} className="relative flex flex-col w-full h-full items-center px-2 sm:px-6">
           <Image
             ref={logoRef}
-            src="/logo.png"
+            src="logo.png"
             width={150}
             height={150}
             alt="Logo"
@@ -184,7 +184,7 @@ function HorizontalScrollSection() {
           <Image
             ref={featureImage}
             className="fixed z-50 left-1/2 top-20 -translate-x-1/2 w-[200px] sm:w-[300px] lg:w-[500px] rounded-2xl overflow-hidden"
-            src="/redclose.jpg"
+            src="redclose.jpg"
             width={800}
             height={800}
             alt="Feature"
@@ -213,7 +213,7 @@ function HorizontalScrollSection() {
                 desciption=
                   "Engineered for strength and reliability, our front tractor weights keep your machine firmly grounded, improving balance, grip, and control. Perfect for handling heavy equipment and ensuring safe, efficient performance across all terrains.Our robust front tractor weights provide stability, prevent lifting, and enhance traction. Designed for tough farming conditions, they ensure safer handling and maximum efficiency when operating heavy implements on the field."
                 
-                imageUrl={['/img2.jpg', '/weight.jpg','/weights.jpg','/redweights.jpg']}
+                imageUrl={['img2.jpg', 'weight.jpg','weights.jpg','redweights.jpg']}
               />
             </div>
             
@@ -223,7 +223,7 @@ function HorizontalScrollSection() {
                heading="Tractor Mounted hoods"
                 desciption="Our factory manufactures high-quality tractor hoods designed to provide maximum protection from sun, rain, and dust. Built with strong metal frames and durable materials, these canopies ensure long-lasting performance. Perfectly suited for all farming conditions, they enhance operator comfort and safety while maintaining a sleek, professional look for tractors."
                 
-                imageUrl={['/2red.jpg', '/u.jpg','/closeupumbrella.jpg','/greenumbrella.jpg']} />
+                imageUrl={['2red.jpg', 'u.jpg','closeupumbrella.jpg','greenumbrella.jpg']} />
             </div>
 
             <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full flex items-center justify-center bg-gradient-to-tl from-red-400 via-red-500 to-orange-100">
@@ -239,7 +239,7 @@ function HorizontalScrollSection() {
               headingColor="text-blue-900"
               heading='Premium Services'
                 desciption='Our premium tractor service ensures your machine performs at its best in every season. With expert technicians, genuine parts, and advanced diagnostic tools, we provide complete maintenance and repair solutions. Experience smooth operation, extended lifespan, and superior efficiency with our trusted, high-quality service tailored to meet every farmer’s needs.'
-                imageUrl={['greensf.jpg', '/s_c.JPG','/s_b.JPG','/s_a.JPG']}  />
+                imageUrl={['greensf.jpg', 's_c.JPG','s_b.JPG','s_a.JPG']}  />
             </div>
 
             <div className="flex-shrink-0 w-[90vw] sm:w-screen h-full flex items-center justify-center  bg-gradient-to-l from-green-400 to-green-600 px-8">
@@ -247,7 +247,7 @@ function HorizontalScrollSection() {
                headingColor="text-green-900"
                heading='Agri-Tech Farming'
                 desciption='We deliver cutting-edge tractor solutions designed to simplify and modernize farming. Our range includes efficient power systems, ergonomic designs, and advanced attachments that boost productivity in the field. Combining technology with reliability, our tractors help farmers achieve more with less effort, ensuring performance, comfort, and sustainability in every operation.'
-                imageUrl={['/lm.jpg', '/l_a.JPG','/l_c.JPG','/l_b.JPG']}  />
+                imageUrl={['lm.jpg', 'l_a.JPG','l_c.JPG','l_b.JPG']}  />
             </div>
           </div>
         </div>
