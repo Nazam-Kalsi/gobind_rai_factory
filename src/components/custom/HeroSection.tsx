@@ -137,7 +137,9 @@ function HeroSection() {
         contain: 'layout style paint',
         willChange: 'auto'
       }}>
-      <div className="absolute top-0 h-[110vh] w-screen blur-sm bg-[url(/bg1.jpg)] dark:bg-none bg-fixed bg-cover dark:opacity-0" />
+      <div className="absolute top-0 h-[110vh] w-screen blur-sm dark:bg-none bg-fixed bg-cover dark:opacity-0" style={{
+        backgroundImage: `url('bg1.jpg')`
+      }} />
   
       <div ref={coverRef} className="absolute inset-0 bg-red-900 dark:bg-black z-[19] pointer-events-none" />
       <div
@@ -190,7 +192,7 @@ function HeroSection() {
 
         {/* Main image */}
         <div className=" relative min-w-1/2 sm:w-[300px] lg:w-[800px] mt-8 lg:mt-0  z-[-2]">
-          <Image className="dark:drop-shadow-[0px_0px_10px_#f580804b] " src="/png1.png" width={1000} height={1000} alt="Main Visual" />
+          <Image className="dark:drop-shadow-[0px_0px_10px_#f580804b] " src="png1.png" width={1000} height={1000} alt="Main Visual" />
         </div>
 
         {/* Decorative img1 */}
