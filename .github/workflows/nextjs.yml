@@ -77,6 +77,8 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+      - name: Add CNAME
+        run: echo "www.gobindrai.in" > ./out/CNAME
         with:
           path: ./out
 

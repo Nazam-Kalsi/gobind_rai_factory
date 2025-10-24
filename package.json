@@ -1,6 +1,7 @@
 {
-  "name": "wb",
+  "name": "gobind_rai_site",
   "version": "0.1.0",
+  "homepage": "https://www.gobindrai.in",
   "private": true,
   "scripts": {
     "dev": "next dev",
