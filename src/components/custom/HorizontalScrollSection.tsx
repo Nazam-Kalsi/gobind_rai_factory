@@ -156,19 +156,19 @@ function HorizontalScrollSection() {
         />
 
         {/* Logo + Text */}
-        <div ref={logoContainer} className="relative flex flex-col w-full h-full items-center px-2 sm:px-6">
+        <div ref={logoContainer} className="relative flex flex-col w-full items-center px-2 sm:px-6">
           <Image
             ref={logoRef}
             src="logo.png"
             width={150}
             height={150}
             alt="Logo"
-            className="w-[80px] sm:w-[120px] lg:w-[150px]"
+            className="w-[80px] sm:w-[120px] lg:w-[150px] mt-6 sm:mt-20"
             style={{ transformOrigin: "center center" }}
           />
 
           {/* Text reveal */}
-          <div ref={textLinesRef} className="h-[80vh] flex items-center space-y-4 sm:space-y-6 text-center mt-6 text-shadow-sm "> 
+          <div ref={textLinesRef} className="h-[90vh] max-w-6xl flex items-center space-y-4 sm:space-y-6 text-center mt-6 text-shadow-sm "> 
 
             <p className="line text-5xl sm:text-5xl lg:text-7xl font-black uppercase text-shadow-sm ">
               Every type of&nbsp;
@@ -206,12 +206,12 @@ function HorizontalScrollSection() {
             className="flex h-full items-center"
           >
             {/* Slides */}
-            <div className="flex-shrink-0 w-[100vw] sm:w-screen h-full bg-gradient-to-tr from-blue-700 via-blue-400 to-violet-400 rounded-tl-4xlflex items-center justify-center">
+            <div className="flex-shrink-0 w-[100vw] sm:w-screen h-full bg-gradient-to-tr from-blue-700 via-blue-400 to-violet-400 flex items-center justify-center">
               <HoriScrollContent
               headingColor="text-blue-900"
                 heading="Front Tractor Weights"
                 desciption=
-                  "Engineered for strength and reliability, our front tractor weights keep your machine firmly grounded, improving balance, grip, and control. Perfect for handling heavy equipment and ensuring safe, efficient performance across all terrains.Our robust front tractor weights provide stability, prevent lifting, and enhance traction. Designed for tough farming conditions, they ensure safer handling and maximum efficiency when operating heavy implements on the field."
+                  "Engineered for strength and reliability, our front tractor weights keep your machine firmly grounded, improving balance, grip, and control. Perfect for handling heavy equipment and ensuring safe, efficient performance across all terrains.Our robust front tractor weights provide stability, prevent lifting, and enhance traction. Designed for tough farming conditions, they ensure safer handling and maximum efficiency."
                 
                 imageUrl={['img2.jpg', 'weight.jpg','weights.jpg','redweights.jpg']}
               />
@@ -230,7 +230,7 @@ function HorizontalScrollSection() {
               <HoriScrollContent
               headingColor="text-red-900"
               heading='Premium Tractor Modification'
-                desciption='We specialize in advanced tractor modifications that boost both functionality and style. From performance upgrades to custom attachments and aesthetic enhancements, our expert team ensures every tractor meets modern farming needs. Each modification is engineered for durability, comfort, and efficiency—transforming your tractor into a powerful, reliable, and eye-catching machine.'
+                desciption='We specialize in advanced tractor modifications that boost both functionality and style. From performance upgrades to custom attachments and aesthetic enhancements, our expert team ensures every tractor meets modern farming needs. Each modification is engineered for durability, comfort, and efficiency—transforming your tractor.'
                 imageUrl={['c_a.jpg', 'modification_b.jpg', 'modification_c.JPG', 'modification_d.JPG']}  />
             </div>
 

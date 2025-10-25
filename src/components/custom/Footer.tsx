@@ -4,12 +4,12 @@ import React from "react";
 
 function Footer() {
   return (
-    <section className="h-[95vh] relative z-[99] bg-yellow-300 dark:bg-violet-900 overflow-hidden rounded-3xl m-4">
+    <section className="h-[95vh] flex flex-col items-center justify-center  relative z-[99] bg-yellow-300 dark:bg-violet-900 overflow-hidden rounded-3xl m-4">
       {/* Background pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(120,119,198,0.1),transparent_70%)]"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(59,130,246,0.08),transparent_60%)]"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 w-full">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-10 lg:gap-16">
           {/* Left section - CTA */}
           <div className="flex-1 max-w-lg text-center sm:text-left">

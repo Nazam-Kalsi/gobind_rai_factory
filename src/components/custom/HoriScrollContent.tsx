@@ -18,9 +18,9 @@ function HoriScrollContent({
   ],
 }: Props) {
   return (
-    <div className="flex flex-col items-center justify-start w-screen h-full  ">
+    <div className="flex flex-col items-center justify-center sm:justify-start w-screen h-full">
       {/* Block 1 */}
-      <div className="flex flex-col lg:flex-row justify-start  items-center gap-6  h-1/2 lg:w-full lg:h-full px-2">
+      <div className="flex flex-col lg:flex-row justify-start items-center gap-0 sm:gap-6 lg:w-full lg:h-full px-2">
       <div className='w-1/2'>
 
         <Image
@@ -31,7 +31,7 @@ function HoriScrollContent({
           className="rounded-xl object-fit"
           />
           </div>
-        <div className="flex flex-col  w-full items-start h-full py-4 justify-center text-center md:text-left space-y-4">
+        <div className="flex flex-col  w-full items-start h-full  justify-center text-center md:text-left space-y-4">
           <div className="w-full text-justify">
           <h2 className={`text-2xl md:text-5xl w-full text-start font-black ${headingColor} text-shadow-sm text-shadow-white dark:text-shadow-black`}>{heading}</h2>
           <p className="text-base md:text-lg leading-relaxed text-gray-200">
